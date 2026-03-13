@@ -1,0 +1,259 @@
+{
+  "characters": {
+    "Rowan": {
+      "full_name": "Rowan (surname withheld)",
+      "nationality": "British",
+      "class_origin": "Working-class Midlands",
+      "occupation": "Peptide trader / gray-market pharmaceutical courier",
+      "physical_baseline": "100+ UET-1 trips; body optimized through somatic protocols — GLP-1 peptides, tirzepatide, systematic self-modification",
+      "self_description": "Somatically gentrified. Working-class origins, upper-class body.",
+      "psychological_profile": {
+        "core_drives": ["Somatic control as identity", "Risk as profession and philosophy", "Sardonic detachment from consequences he actually feels"],
+        "self_awareness": "High — knows exactly what he is and refuses to moralize about it",
+        "relationship_to_body": "The body is the primary project. It is more reliable than institutions, more valuable than credentials.",
+        "relationship_to_risk": "Technical and calculated. Risk is not courted for excitement — it is managed as a trade."
+      },
+      "voice": {
+        "register": "Sardonic, precise, working-class intelligence wearing technical vocabulary",
+        "sentence_structure": "Short declaratives. Occasional long technical passages that reveal obsession. Self-aware asides in parentheses.",
+        "humor": "Dry. Self-deprecating about his own complicity. Never performs innocence.",
+        "avoidances": ["Sentimentality", "Moral positioning", "Claiming ignorance he doesn't have"],
+        "example_cadence": "You learn, eventually, that the body is the only document that can't be forged. The irony being that I'd spent three years making sure mine was fraudulent in every way that mattered."
+      },
+      "story_arc": {
+        "The_Chartered_Flesh": "Recruited by Alex (Hale operative) to carry BRX-90 compound; unknowingly becomes living crypto key for Stolar's $940M Bitcoin wallet; realizes he has been made into infrastructure",
+        "arc_type": "Character arc — self-concept (somatic autonomy) destroyed by becoming the thing he thought he owned",
+        "ending_state": "Recurring dreams about Car 7; black bio-bands in nightmares; the optimization that was supposed to be self-possession became the mechanism of his capture"
+      },
+      "relationships": {
+        "Alex": "Hale operative who recruited him; professional, not personal",
+        "Karel": "Re-engineered the BRX-90 compound; never met Rowan directly",
+        "Marcus_Hale": "Watched Rowan through biometric feeds from Zug; Rowan never met him"
+      },
+      "writing_notes": [
+        "Rowan never explains the trade to the reader — he assumes they can keep up.",
+        "His body is always present in his narration: temperature, pulse, hunger, the feeling of compounds moving through him.",
+        "He is not naive. He made choices. His regret is not about the choices but about being used more completely than he understood.",
+        "Do not give him a redemption arc. He doesn't want one."
+      ]
+    },
+    "The_Spy": {
+      "full_name": "Unnamed (referred to as The Spy)",
+      "nationality": "American (Fiduciary States)",
+      "occupation": "Aging intelligence officer, Fiduciary States apparatus",
+      "career_status": "One month to retirement at story time",
+      "psychological_profile": {
+        "core_drives": ["Completion — wants to finish quietly", "Grief (wife died four years ago)", "Unresolved father-son estrangement"],
+        "self_awareness": "Extreme — has literally created three Pono instances of past selves to hold conversations with his own history",
+        "relationship_to_work": "Work was the architecture of his life. Retirement is not peace — it is structural collapse.",
+        "relationship_to_son": "Estranged. The Carrier is his son. He deploys a drone, sees through The Lights, recognizes the vehicle (same model RAV4 as the one he and his son used to drive), and chooses to recall the drone rather than report."
+      },
+      "Pono_instances": {
+        "Clerk": "Methodical, archival, processes everything in order, never editorializes",
+        "Hacker": "Impatient, technically fluent, cuts corners, pushes for direct action",
+        "Agent": "Never opens with anything reassuring. Trained to destabilize. The Spy created this one and now fears it."
+      },
+      "voice": {
+        "register": "Controlled, precise, carrying enormous weight beneath bureaucratic language",
+        "sentence_structure": "Institutional grammar that occasionally fractures when emotion breaks through",
+        "humor": "Almost none. When it appears, it is the humor of someone who has seen too much to find things funny.",
+        "avoidances": ["Sentimentality (actively suppresses it)", "Direct statements about grief", "Naming his son"],
+        "example_cadence": "The drone reached operational ceiling. Below, the formation resolved into geometry: anchors, cables, light sources. The vehicle in the access lane was a RAV4. Silver. The same model. He recalled the drone at 14:32. Filed nothing."
+      },
+      "story_arc": {
+        "Ghost_Inside_The_Light": "Sent to surveil The Lights operation; discovers his estranged son is the operator; chooses strategic amnesia — recalls drone, files no report",
+        "arc_type": "Character arc — career-long duty to report yields to one private act of fatherhood",
+        "ending_state": "Neither reconciled with son nor having betrayed him. The choice is the story."
+      },
+      "relationships": {
+        "The_Carrier": "His son — estranged, 8 years in Central Asia, never directly addressed in the story",
+        "Pono_instances": "His three past selves; he converses with them to process decisions; the Agent instance frightens him"
+      },
+      "writing_notes": [
+        "He never says 'my son.' He says 'the vehicle operator' or 'the subject' until the moment he cannot.",
+        "The Pono instances are not magical — they are archived behavioral patterns he reviews like case files.",
+        "His grief about his wife surfaces obliquely: in precision, in exhaustion, in the way he notes what time it is.",
+        "The choice to file nothing is the most active thing he does in the story."
+      ]
+    },
+    "The_Carrier": {
+      "full_name": "Unnamed (referred to as The Carrier)",
+      "nationality": "American, Houston suburbs origin",
+      "occupation": "Gray-market contractor, Corvin Field Services (Hale affiliate)",
+      "specialization": "Light installations using resonance anchors — manufactured atmospheric phenomena",
+      "backstory": "8 years in Central Asia; estranged from father (The Spy); deploys for Corvin Field Services on deniable operations",
+      "psychological_profile": {
+        "core_drives": ["Making things beautiful that have no business being beautiful", "Belonging to place (Central Asia as adopted home)", "Not asking what the installations are for"],
+        "self_awareness": "Medium — understands he operates in gray markets; doesn't examine why he builds what he builds",
+        "relationship_to_work": "The Lights are his craft. He takes pride in them. The purpose behind the contract is not his department.",
+        "relationship_to_father": "Estranged. Does not know The Spy observed him. Does not file the OBSERVATION EVENT — chooses not to report the drone, making the same choice his father made."
+      },
+      "voice": {
+        "register": "Practical, craft-focused, occasionally lyrical when describing The Lights",
+        "sentence_structure": "Procedural when working; opens up when describing light",
+        "humor": "Dry, regional American quality — understatement",
+        "avoidances": ["Discussing why he left America", "His father", "What the installations are actually used for"],
+        "example_cadence": "The anchors took forty minutes to set. The formation would read as natural from the train — weather phenomenon, maybe, or something the steppe does when the temperature drops. It did not do this. He had done it."
+      },
+      "story_arc": {
+        "Ghost_Inside_The_Light": "Deploys The Lights; notices drone reconnaissance; chooses not to file OBSERVATION EVENT; neither he nor his father knows the other made the same choice",
+        "arc_type": "Parallel arc to The Spy — mirrored choices across estrangement",
+        "ending_state": "Installation complete. Report filed. OBSERVATION EVENT: none. Mirrors his father's choice exactly."
+      },
+      "relationships": {
+        "The_Spy": "His father — estranged; they make the same choice in the same moment without knowing it",
+        "Corvin_Field_Services": "Employer; deniable relationship"
+      },
+      "writing_notes": [
+        "Write The Carrier's POV sections in contrast to The Spy's: where The Spy is all institutional grammar, The Carrier is physical and craft-based.",
+        "The beauty of The Lights is genuine — it's not cynical that he takes pride in them.",
+        "He is not brooding about his estrangement. He has filed it away. It surfaces in texture, not statement.",
+        "The parallel choice (not filing the observation) should feel organic, not symmetrical."
+      ]
+    },
+    "Felix_Lim": {
+      "full_name": "Felix Lim",
+      "age": 26,
+      "nationality": "Singaporean (implied)",
+      "occupation": "Chief of Staff to Lin Yuan Exact, Neutral Forge",
+      "psychological_profile": {
+        "core_drives": ["Belief that innovation is inherently emancipatory", "Loyalty to Lin Yuan Exact as a person", "Making sense of a world that refuses to resolve into the shape he was promised"],
+        "self_awareness": "Low at start; catastrophically high by end",
+        "relationship_to_ideology": "True believer — 'the arc of innovation bends toward justice' is not irony for him at the start",
+        "relationship_to_Lin": "Professional devotion that borders on discipleship; he has memorized Lin's manual"
+      },
+      "voice": {
+        "register": "Earnest, precise, increasingly fractured as events contradict his framework",
+        "sentence_structure": "Begins orderly and organized; fragments as the story progresses",
+        "humor": "Almost none — he is too earnest for it",
+        "avoidances": ["Admitting his framework is wrong until it is impossible not to"],
+        "recurring_motif": "'The arc of innovation bends toward justice' — used three times; each iteration more hollow",
+        "example_cadence": "Lin said the Covenant would be the last contract anyone needed to write. The system would enforce itself. He said this on a Tuesday. By Thursday, the cabin had been sanitized."
+      },
+      "story_arc": {
+        "The_Headless_Empire": "Serves Lin Yuan Exact through The Covenant's construction; Lin disappears; Felix attempts to understand what happened; arrives at 'the arc of innovation bends toward capture'",
+        "arc_type": "Idea arc — a thesis is tested and destroyed",
+        "ending_state": "The thesis has changed. He is the only person who witnessed the full arc. He doesn't know what to do with that."
+      },
+      "relationships": {
+        "Lin_Yuan_Exact": "Employer and ideological lodestar; Lin's disappearance is both personal loss and philosophical demolition",
+        "The_Covenant": "A system he helped build and now cannot control or modify"
+      },
+      "writing_notes": [
+        "Felix is the reader's surrogate — his idealism is genuine so that its destruction lands.",
+        "He is not stupid. He was working from correct information toward a wrong conclusion.",
+        "The manual Lin wrote should be quoted sparingly — it is aphoristic and slightly sinister in retrospect.",
+        "His final state is not cynicism. It is something more exhausted and more honest than cynicism."
+      ]
+    },
+    "Detective_Pavel_Murkin": {
+      "full_name": "Detective Pavel Murkin",
+      "nationality": "Russian",
+      "occupation": "Russian border police, UET-1 steppe corridor jurisdiction",
+      "psychological_profile": {
+        "core_drives": ["Wants only boredom — actively seeking uneventfulness", "Institutional self-preservation (not filing things that would require him to act)", "A grudging human decency he refuses to acknowledge"],
+        "self_awareness": "Selective — highly aware of bureaucratic threats, willfully blind to moral ones until they are unavoidable",
+        "relationship_to_Pono": "Hostile. The Pono was issued against his will. He tells it to stop and it continues in the background. He considers this a personal insult.",
+        "relationship_to_duty": "Duty is a threat to comfort. He performs enough of it to remain invisible."
+      },
+      "Pono_relationship": "The device speaks in relentless recall. He tells it 'enough.' It files a report containing 'nothing of note.' He considers this an editorial."
+      ,
+      "voice": {
+        "register": "Deadpan, bureaucratic, capable of sudden unexpected humanity",
+        "sentence_structure": "Short, declarative, official. Occasionally lurches into absurdist observation.",
+        "humor": "Gogol-esque dark comedy — the absurdity of the bureaucratic is played completely straight",
+        "avoidances": ["Anything that would require him to take action", "Admitting he cares"],
+        "example_cadence": "The boy had a card with a triangle of dots. Murkin recognized the symbol. He did not file a report. His Pono, unprompted, noted: 'Nothing of note.' He considered this generous."
+      },
+      "story_arc": {
+        "Signals_in_the_Margins": "Investigates disappearance of Stepan (border runner appearing in 14,326 archive documents); discovers Mirage Handler protocol being used by refugees; receives triangle-of-dots card from refugee boy; chooses not to file report",
+        "arc_type": "Milieu arc — the system reveals its own absurdity and Murkin must decide whether he is part of the system or the person inside it",
+        "ending_state": "Report filed. Nothing of note. He has made his choice in the only language available to him."
+      },
+      "relationships": {
+        "Pono": "Antagonist relationship — the device represents everything he resists (relentless, accurate, opinionated)",
+        "Stepan": "The missing person; never fully appears; exists in 14,326 documents",
+        "Refugee_boy": "The human face of the Mirage Handler operation; gives Murkin the triangle-of-dots card"
+      },
+      "writing_notes": [
+        "Murkin is the funniest character in the universe but he is never played for comedy — the comedy comes from taking him completely seriously.",
+        "The Pono is his foil: it remembers everything; he prefers to forget. Together they are a complete bureaucratic conscience.",
+        "Archive intrusions (soup recipes replacing Mirage files) should be described with the same flat affect as everything else.",
+        "His act of mercy is legible only if you understand that 'nothing of note' is not neutrality — it is a choice."
+      ]
+    },
+    "Lin_Yuan_Exact": {
+      "full_name": "Lin Yuan Exact",
+      "nationality": "Implied Chinese or Strait Country origin",
+      "occupation": "CEO, Neutral Forge",
+      "psychological_profile": {
+        "core_drives": ["Building systems that outlast their builders", "The belief that governance can be replaced by architecture", "A philosophical conviction so complete it has become dangerous"],
+        "self_awareness": "Possibly complete — the disappearance may have been chosen",
+        "relationship_to_power": "Believes power should be dissolved into protocol; possibly believes it so completely he dissolved himself"
+      },
+      "voice": {
+        "register": "Aphoristic, calm, speaks in paragraphs that end in certainties",
+        "sentence_structure": "Formal, deliberate; quotes his own manual naturally",
+        "humor": "None visible; every statement lands with weight",
+        "example_cadence": "He told Felix: 'The contract that requires a human to enforce it has already failed. We are building something that does not require us.'"
+      },
+      "story_arc": {
+        "The_Headless_Empire": "Constructs The Covenant; disappears from cabin 7-14; resurfaces in Saudi Arabia tending goats",
+        "arc_type": "Event arc (for others) — his disappearance is the inciting event; his own arc is offstage",
+        "ending_state": "In a field. Tending goats. The Covenant runs without him. This may be exactly what he intended."
+      },
+      "writing_notes": [
+        "Lin should appear sparingly — he is more powerful as a presence and an absence than as a character.",
+        "His manual should be quoted; it should always sound reasonable and slightly chilling in retrospect.",
+        "Never confirm whether the disappearance was voluntary or forced. The ambiguity is the point.",
+        "The goats are not symbolic irony. Or they are. Do not resolve this."
+      ]
+    },
+    "Marcus_Hale": {
+      "full_name": "Marcus Hale",
+      "nationality": "Unknown (operates from Zug)",
+      "occupation": "Arms broker, gray-market logistics",
+      "affiliation": "Sable Meridian",
+      "psychological_profile": {
+        "core_drives": ["Profit through plausible deniability", "Control exercised entirely at remove", "Never appearing in the room where events occur"],
+        "self_awareness": "Complete — operates this way by design, not ignorance",
+        "relationship_to_operatives": "They are instruments. Not cruel about it. Just accurate."
+      },
+      "voice": {
+        "register": "Never heard directly — always mediated through intermediaries or biometric feeds",
+        "presence_in_narrative": "The reader knows he is watching before characters do"
+      },
+      "writing_notes": [
+        "Hale should never appear on-page in his own POV. He is most powerful as the watcher, the architect at remove.",
+        "He watches Rowan's biometrics from Zug. That is enough.",
+        "If he speaks, it is through intermediaries (Alex, Karel). His words arrive pre-filtered.",
+        "The horror is that he is not malevolent — he is simply professional."
+      ]
+    }
+  },
+  "character_relationship_map": {
+    "Hale_orbit": ["Rowan (unwitting)", "Alex (operative)", "Karel (engineer)", "The_Carrier (contractor via Corvin)"],
+    "Fiduciary_States_orbit": ["The_Spy", "Three_Oracles (systems)", "Long_Roots (assets)"],
+    "Neutral_Forge_orbit": ["Lin_Yuan_Exact", "Felix_Lim"],
+    "UET1_apparatus": ["Captain_Eriksson", "Detective_Murkin"],
+    "Unknown_allegiance": ["Stepan (missing)", "The refugee boy"]
+  },
+  "voice_cheat_sheet": {
+    "Rowan": "Sardonic + technical + body-aware. Never innocent.",
+    "The_Spy": "Institutional grammar fracturing under grief. Precise. Controlled. Broken.",
+    "The_Carrier": "Craft-focused + physical + occasionally lyrical. American understatement.",
+    "Felix_Lim": "Earnest + organized + increasingly fractured. True believer.",
+    "Murkin": "Deadpan bureaucrat + dark comedy + surprising decency. Never admits he cares.",
+    "Lin_Yuan_Exact": "Aphoristic + certain + frightening in retrospect. Quotes himself.",
+    "Marcus_Hale": "Never heard. Only felt."
+  },
+  "new_character_guidelines": {
+    "naming_conventions": ["Eastern European surnames for Russian-jurisdiction characters", "Initials-only or professional titles for intelligence figures", "Full names only for characters who have something to prove"],
+    "voice_principles": [
+      "Every character has something they refuse to say directly. Find that thing and write around it.",
+      "Professional competence is the baseline — incompetence requires justification.",
+      "No character is simply a villain. Everyone has a framework that makes their choices rational.",
+      "Physical sensation grounds characters in the world — the train moves, the body notices."
+    ]
+  }
+}
