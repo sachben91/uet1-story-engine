@@ -1,2 +1,6 @@
-wiki/
 .DS_Store
+.claude/
+node_modules/
+.next/
+out/
+wiki/sources/
