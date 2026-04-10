@@ -4,6 +4,17 @@ Append-only. Most recent entry at top.
 
 ---
 
+## 2026-04-10 — universe.yaml created
+
+**Operation:** New artifact
+
+**Pages created:**
+- `wiki/universe.yaml` — single-file LLM context document; all canon in structured YAML with ID references; covers tensions (9), technologies (6), factions (5), characters (7), world infrastructure (3), stories (4), narrative rules
+
+**Structure:** Definitions declared once with `id` fields; stories and other entries reference ids by string. Intended for pasting into LLM context or file upload. Open/unresolved questions marked `[open]` or under `open:` keys.
+
+---
+
 ## 2026-04-08 — BRX-90 mechanism ingest + canon correction
 
 **Operation:** Ingest (targeted) + correction

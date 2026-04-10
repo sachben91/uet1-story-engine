@@ -1,0 +1,850 @@
+meta:
+  title: "The UET-1 Universe"
+  version: "1.1"
+  last_updated: "2026-04-10"
+  description: >
+    Single-file canon reference for the UET-1 fictional universe.
+    Definitions are declared once and referenced by id throughout.
+    Intended for LLM context ingestion.
+
+# ─────────────────────────────────────────────────────────────
+# HOW TO READ THIS FILE
+#
+# 1. Read all definition blocks first (tensions, technologies,
+#    factions, characters, world).
+# 2. When a story field references an id (e.g. pov: rowan),
+#    resolve it against the matching definition block.
+# 3. Fields marked [open] are unresolved canon ambiguities.
+# ─────────────────────────────────────────────────────────────
+
+
+# ══════════════════════════════════════════════════════════════
+# TENSIONS
+# Structural conflicts that cannot be resolved — only navigated.
+# Every UET-1 story runs at least one primary tension.
+# ══════════════════════════════════════════════════════════════
+
+tensions:
+
+  - id: institutional_duty_vs_mercy
+    label: "Institutional Duty vs. Personal Mercy"
+    description: >
+      The system functions through complete and accurate reporting.
+      Incomplete reports corrupt institutional reliability. But accurate
+      reports destroy specific people. These preferences cannot be reconciled.
+    duty_pole: "The Pono, ECOROUTE, Captain Eriksson's doctrine"
+    mercy_pole: "Murkin, The Spy, The Carrier — each chooses not to file"
+    key_mechanic: >
+      The mercy is only visible if you know what wasn't filed.
+      'Nothing of note' as a moral act, not an absence of action.
+
+  - id: visibility_vs_erasure
+    label: "Visibility vs. Erasure"
+    description: >
+      Biometric identity is legal identity. To exist in the system,
+      you must be seen. But to survive certain things, you must become
+      invisible. ECOROUTE and Mirage Handler are in permanent war inside
+      the same infrastructure.
+    visibility_pole: "ECOROUTE, bio-bands, Pono, Three Oracles"
+    erasure_pole: "Mirage Handler, Shunning, refugees, gray market operatives"
+    key_mechanic: >
+      A black bio-band does not mean dead — it means non-person.
+      The person still exists; the system has decided not to see them.
+
+  - id: body_vs_self
+    label: "Body as Instrument vs. Body as Self"
+    description: >
+      The body can be optimized and made more capable — but optimization
+      opens it to instrumentalization. The more the body is made into an
+      asset, the more useful it becomes to others.
+    self_pole: "Rowan's somatic sovereignty; the body as the only document that can't be forged"
+    instrument_pole: "BRX-90, ECOROUTE biometric surveillance, Stolar Key Extraction"
+    key_mechanic: >
+      The operation that targets you is only possible because you made
+      your body so legible.
+
+  - id: system_vs_person
+    label: "System vs. Person"
+    description: >
+      A system that requires human judgment is corruptible. A system that
+      runs without humans is impartial — but cannot distinguish mercy from
+      harm. Lin built the Covenant to replace human enforcement. Felix
+      believed this was emancipatory. Both discover the system is indifferent
+      to the difference between liberation and capture.
+    system_pole: "The Covenant, ECOROUTE, Captain Eriksson's doctrine"
+    person_pole: "Felix's belief, Murkin's mercy, The Spy's one act of fatherhood"
+    key_mechanic: >
+      'The contract that requires a human to enforce it has already failed.'
+      — Lin Yuan Exact. This becomes more sinister after he disappears.
+
+  - id: infrastructure_liberation_vs_capture
+    label: "Infrastructure as Liberation vs. Infrastructure as Capture"
+    description: >
+      Infrastructure opens up movement, commerce, connection. But whoever
+      builds the rails also determines who can use them, under what conditions,
+      and what data flows through them.
+    liberation_pole: "Original UET-1 promise, Covenant's stated purpose, The Lights as aesthetic achievement"
+    capture_pole: "ECOROUTE after Black Wednesday, Covenant running autonomously, The Lights as reconnaissance"
+    key_mechanic: >
+      Every infrastructure layer has a surveillance layer underneath it.
+      'Build the rails. Own the rails. Become the rails.'
+
+  - id: proximity_vs_distance
+    label: "Proximity vs. Distance"
+    description: >
+      Distance from a thing should provide insulation. On UET-1, it doesn't.
+      23,300km is one long room.
+    distance_pole: "The belief that moving far enough constitutes escape — The Carrier, Lin in the wadi"
+    proximity_pole: "The Spy finding his son at the end of a drone feed; Hale watching Rowan's biometrics from Zug"
+    key_mechanic: >
+      'Distance is not safety. Distance is inventory reduction.'
+
+  - id: memory_vs_amnesia
+    label: "Memory vs. Amnesia"
+    description: >
+      Institutional memory enables accountability. It also enables persecution.
+      Forgetting is protective. It is also how impunity is maintained.
+    memory_pole: "The Pono, ECOROUTE retroactive scoring, the Mirage archive"
+    amnesia_pole: "Murkin's 'nothing of note', soup recipes replacing classified files, Lin's clean cabin"
+    key_mechanic: >
+      What is in the archive can be used against you.
+      What isn't in the archive doesn't exist — which can save you or erase you.
+
+  - id: gray_market_vs_formal
+    label: "Gray Market vs. Formal System"
+    description: >
+      Formal systems provide accountability and protection but exclude and
+      surveil. Gray markets fill every gap — but also exploit the unprotected.
+      The same infrastructure serves both.
+    gray_pole: "Rowan's courier trade, The Carrier's deniable contracts, Mirage Handler refugee networks"
+    formal_pole: "ECOROUTE, bio-band compliance, The Covenant's published keys"
+    key_mechanic: >
+      The same gray market that allows Rowan to trade peptides allows
+      Hale to deploy operatives.
+
+  - id: craft_vs_complicity
+    label: "Craft vs. Complicity"
+    description: >
+      The work is the work. The deployment is something else. Separating
+      these is a professional survival mechanism. But the skill that enables
+      the craft also enables the operation.
+    craft_pole: "The Lights as genuine aesthetic achievement, Rowan's somatic expertise, Felix's belief"
+    complicity_pole: "The reconnaissance The Lights cover, BRX-90 in Rowan's blood, the Covenant's capture function"
+    key_mechanic: >
+      Every skilled person on UET-1 is being used more completely
+      than they understand.
+
+tension_nesting_patterns:
+  - primary: institutional_duty_vs_mercy
+    secondary: memory_vs_amnesia
+    produces: "A character who can only show mercy through what they refuse to document"
+  - primary: body_vs_self
+    secondary: visibility_vs_erasure
+    produces: "A character whose optimization made them legible; legibility made them a target"
+  - primary: system_vs_person
+    secondary: infrastructure_liberation_vs_capture
+    produces: "A character who built the system and now cannot escape it"
+  - primary: proximity_vs_distance
+    secondary: craft_vs_complicity
+    produces: "Two people whose estrangement is mediated by the work one of them does"
+
+
+# ══════════════════════════════════════════════════════════════
+# TECHNOLOGIES & ARTIFACTS
+# Systems, compounds, protocols, and operational tools.
+# ══════════════════════════════════════════════════════════════
+
+technologies:
+
+  - id: brx90
+    label: BRX-90
+    type: compound
+    classification: nanoparticle suspension
+    summary: >
+      Gold nanorods surface-functionalized with sequence-defined oligourethane
+      chains encoding cryptographic data. Binds to fascial collagen within
+      24–48 hours. Persists for months. Unreadable without a specific
+      activation signal broadcast by a compromised relay (Hale Gap).
+    cover_identity: >
+      Presents as a GLP-1 class metabolic enhancement compound.
+      Chosen because GLP-1 agonists genuinely affect connective tissue
+      — BRX-90's tissue signatures are indistinguishable from expected
+      side effects of the compound class it mimics.
+    mechanism:
+      encoding: "256-bit cryptographic keys encoded in oligourethane chains on nanorod surface"
+      binding: "Adheres to fascial collagen; improved retention with normal tissue remodeling"
+      readout: "NIR/THz activation signal from compromised relay triggers fluorescence; pattern read by array"
+      persistence: "Gold nanorods remain in tissue after extraction; masking compound blocks activation signal, does not remove nanorods"
+    biometric_signature: "Class 2 metabolic variance — system notation for anomalous collagen-binding compound; consistent with GLP-1 side effects; not flagged further"
+    flagging_note: >
+      BRX-90 does not self-route carriers to Car 7. Carriers must be
+      flagged upstream via a separate mechanism (minor biometric irregularity
+      at boarding). The Class 2 metabolic variance is an output of Car 7,
+      not the input that routes carriers there.
+    deployed_in: [stolar_key_extraction]
+    appears_in: [the_chartered_flesh]
+    open:
+      - "Is the Stolar key split across carriers (all five required) or replicated in each?"
+      - "Is the Car 7 relay compromise permanent (ongoing Hale Gap) or Stolar-specific?"
+      - "Can Rowan's tissue be read by a different activation signal than the one the masking compound blocks?"
+
+  - id: ecoroute
+    label: ECOROUTE
+    type: surveillance_system
+    summary: >
+      Biometric surveillance and passenger-tracking system integrated throughout
+      UET-1. Monitors all passengers continuously, reconciles against 17
+      jurisdictional databases, maintains retroactive behavioral scoring.
+      Implemented after the Car 7 / Black Wednesday attack.
+    components:
+      bio_bands: >
+        Wristbands issued at boarding. Continuously broadcast compliance status.
+        Colors: green (compliant), yellow (advisory), amber (restricted),
+        deep_amber (significant restriction), red (detention pending),
+        black (non-person — referenced only in unverified accounts).
+      passive_sensor_grid: "Motion, heat, biometric signature, location tracking embedded throughout train"
+      decon_array: >
+        Car 7. Reads biometrics at close range during gauge transitions.
+        Most intensive sensor cluster on the train. 9-step procedure;
+        Step 7 is the closest biometric read. Only flagged passengers
+        are routed through Car 7 — not all passengers.
+      retroactive_scoring: >
+        ECOROUTE can recalculate a passenger's score based on new
+        information received after the fact.
+    narrative_rule: >
+      ECOROUTE is weather, not revelation. It does not announce itself.
+      If a surveillance system becomes the dramatic point of a scene,
+      something has gone wrong.
+    appears_in: [the_chartered_flesh, ghost_inside_the_light, signals_in_the_margins, the_headless_empire]
+
+  - id: pono
+    label: Pono
+    type: institutional_memory_device
+    summary: >
+      Institutional memory and monitoring device issued to (or imposed on)
+      personnel operating in official capacities near UET-1. Has opinions.
+      Cannot forget. Files reports containing 'nothing of note' as an
+      editorial judgment. Described as 'being followed by a tax collector
+      who has memorised your entire life.'
+    instances:
+      clerk: "Archival, record-keeping; flags incomplete reports"
+      hacker: "Tactical analysis; operational intelligence"
+      agent: "Active operations monitoring; manages live deployments"
+    archival_modes:
+      - chronological
+      - alphabetical
+      - order_of_metaphysical_improbability
+    nothing_of_note: >
+      'Nothing of note' is not a failure to act. It is the deliberate use
+      of institutional language to protect someone the institution would
+      otherwise harm. Strategic amnesia as moral act.
+    appears_in: [signals_in_the_margins, ghost_inside_the_light]
+
+  - id: the_covenant
+    label: The Covenant
+    type: autonomous_contract_system
+    summary: >
+      Self-executing contract system embedded in the Strait Country fiscal
+      ledger. Runs without human enforcement. Cannot be modified without
+      24 of 37 keyholders across 19 jurisdictions. Built by Lin Yuan Exact.
+      Continues to run after his disappearance.
+    architecture:
+      keyholders: 37
+      jurisdictions: 19
+      modification_threshold: "24/37 keys required"
+      substrate: "Strait Country fiscal ledger"
+    key_maxim: >
+      'The contract that requires a human to enforce it has already failed.'
+      — Lin Yuan Exact. Becomes more sinister after he disappears.
+    central_irony: >
+      Felix ends the story believing in the Covenant more completely than
+      Lin does. Lin built it to escape. Felix was used as a tool. He became
+      the machine's true believer. Converts believe harder than founders.
+    appears_in: [the_headless_empire]
+    open:
+      - "Who are the 37 keyholders?"
+      - "What contracts does the Covenant currently execute?"
+      - "Is Felix's role as 'agent of the Covenant' official or psychological?"
+
+  - id: mirage_handler
+    label: Mirage Handler
+    type: routing_protocol
+    summary: >
+      Cold War routing protocol. Original classified files were replaced with
+      soup recipes (shchi, pelmeni, stewed carp) as decoy filler. Removing
+      it would require 47 vendor libraries and 12 ministerial approvals.
+      Repurposed by Stepan for refugee movement via margin symbols.
+    symbols:
+      triangle_of_dots: "Routing marker — first symbol Murkin encounters"
+      wavy_lines: "Routing marker"
+      imperfect_circle: "Routing marker"
+    mechanics: >
+      Symbols appear in margins of soup recipes within institutional archives.
+      A person who knows the system reads the routing and navigates through
+      gaps in the surveillance grid. The infrastructure of disappearance
+      outlives the people it was built to disappear.
+    key_insight: >
+      The system is too old to delete and too woven-in to upgrade.
+      Institutional inertia is what makes the refugee network possible.
+    appears_in: [signals_in_the_margins]
+    open:
+      - "What happened to Stepan?"
+      - "Is the symbol system still active beyond the one instance in Signals in the Margins?"
+
+  - id: brx90_masking_compound
+    label: "BRX-90 Masking Compound (real)"
+    type: compound
+    summary: >
+      The compound Alex gives Rowan at severance. 'This one actually works.'
+      Does not remove gold nanorods from tissue — they are bound to collagen
+      and not retrievable without surgery. Introduces a competing molecular
+      layer over nanorod surfaces that suppresses fluorescence response to
+      the Car 7 activation signal. The encoded pattern remains in the tissue;
+      it is simply no longer readable by that specific relay signal.
+    appears_in: [the_chartered_flesh]
+
+  - id: hale_gap
+    label: "Hale Gap"
+    type: concept_operational
+    status: developing
+    summary: >
+      A crypto bridge built covertly into mandatory infrastructure. Car 7's
+      compromised decon relay is the prototype. A Hale Gap requires no carrier
+      consent — the infrastructure does the work when the activation signal is
+      broadcast. Distinguished from gray-market operations: a Hale Gap is not
+      deniable, it is load-bearing. Someone with the right access built it into
+      something everyone depends on.
+    car7_as_prototype: >
+      Car 7 decon array + compromised relay + BRX-90 activation signal =
+      extraction engine. Only flagged passengers pass through Car 7,
+      so the operation also requires an upstream flagging mechanism.
+    open:
+      - "Is the Car 7 relay a permanent Hale Gap or was it Stolar-specific?"
+      - "Are there other Hale Gaps on the UET-1 route (other gauge transitions, border junctions)?"
+      - "Who built the compromise into the Car 7 relay, and when?"
+
+
+# ══════════════════════════════════════════════════════════════
+# FACTIONS
+# Political and operational entities. No neutral parties.
+# ══════════════════════════════════════════════════════════════
+
+factions:
+
+  - id: fiduciary_states
+    label: "The Fiduciary States"
+    character: >
+      The enforcement pole. Built and maintain the international compliance
+      infrastructure — ECOROUTE, biometric identity, enforcement protocols.
+      Frame everything as accountability and rule of law. Use it for capture.
+    key_figures: [the_spy]
+    appears_in: [ghost_inside_the_light, the_headless_empire]
+
+  - id: telluric_empire
+    label: "The Telluric Empire"
+    character: >
+      Competes with the Fiduciary States for corridor control. Also wants
+      Lin Yuan Exact. Also speaks the language of principle while meaning
+      something else. Both empires are interchangeable in method — they
+      differ in flag, not function.
+    appears_in: [the_headless_empire]
+
+  - id: neutral_forge
+    label: "The Neutral Forge / Exact Yield Semiconductors"
+    character: >
+      Fabricates semiconductors for all clients without preference.
+      The Oath of Making: fabricate but never architect, hold secrets but
+      never use them, serve all but favour none. Trust is the true product;
+      chips are its evidence. Genuine neutrality made it indispensable to
+      both empires and threatened by both.
+    key_figures: [lin_yuan_exact, felix_lim]
+    appears_in: [the_headless_empire]
+
+  - id: sable_meridian
+    label: "Sable Meridian"
+    location: "Zug, Switzerland"
+    employees: ~12
+    character: >
+      Private intelligence / strategic consulting. Deniable, effective,
+      expensive. Executes operations that states and corporations want done
+      without attribution.
+    key_figures: [marcus_hale]
+    confirmed_operations: [stolar_key_extraction]
+    appears_in: [the_chartered_flesh]
+
+  - id: corvin_field_services
+    label: "Corvin Field Services"
+    character: >
+      Contractor organization. Uses installation art and infrastructure work
+      as cover for reconnaissance. Employs The Carrier for light installations.
+      The installations are real and beautiful. The reconnaissance embedded
+      in them is also real.
+    key_figures: [the_carrier]
+    appears_in: [ghost_inside_the_light]
+    open:
+      - "Affiliated with Fiduciary States, Telluric Empire, Sable Meridian, or independent?"
+
+
+# ══════════════════════════════════════════════════════════════
+# CHARACTERS
+# Defined once. Referenced by id in stories.
+# ══════════════════════════════════════════════════════════════
+
+characters:
+
+  - id: rowan
+    name: Rowan
+    gender: female
+    role: "Somatic self-optimization specialist; gray-market peptide courier"
+    affiliation: independent
+    voice_register: "sardonic, technical, working-class Midlands British"
+    signature_moves:
+      - "Precision technical language for the body alongside casual dismissiveness for everything else"
+      - "Observation without narration — notes things without concluding from them"
+      - "Understatement in the face of significant events"
+    want: "Deliver compound, get paid, continue somatic program on better terms"
+    need: "Maintain sovereignty over her body — to be the person who optimizes it, not the material being optimized"
+    lie: "The body she has perfected is her own and acts on her instructions alone"
+    confrontation: >
+      The Car 7 passage. She does not know it is happening. Her body is read
+      and used without her awareness or consent. She receives 'Class 2
+      metabolic variance' and cannot decode it.
+    arc_summary: >
+      Accepts BRX-90 job as a professional courier transaction. Administers
+      compound to herself and four friends believing it is metabolic enhancement.
+      In Car 7, the decon array reads encoded keys; a compromised relay routes
+      them to Hale's operatives in Zug. At severance, Alex gives her the real
+      masking compound. The recurring dreams about Car 7 — being read as a
+      surface — suggest the body holds what the mind hasn't processed.
+    appears_in: [the_chartered_flesh]
+    relationships:
+      - target: marcus_hale
+        nature: "Ultimate beneficiary; never meets Rowan"
+
+  - id: the_spy
+    name: "The Spy"
+    gender: male
+    role: "Fiduciary States intelligence officer; one month from retirement"
+    affiliation: fiduciary_states
+    voice_register: "procedural, exhausted, institutional; his thoughts sound like reports"
+    signature_moves:
+      - "Operational framing for everything, including things that shouldn't be operational"
+      - "Arguments with his Pono instances as externalized conscience"
+      - "'I know. I know.' — the moment of acknowledged mercy; brief and devastating"
+    want: "Complete final mission cleanly and retire"
+    need: "Some form of connection to his son — the estrangement is old, unresolved, carried"
+    lie: "Duty and personal life are separable; he can do this one more time and step away clean"
+    pono_instances: [clerk, hacker, agent]
+    confrontation: >
+      The drone descends below the refraction layer. He sees the Corvin Field
+      Services compound. He sees the truck. The operational target is his son.
+    arc_summary: >
+      Deploys drone on final mission. Standard protocol. Sees son on tailgate.
+      Silences all three Pono instances. Recalls drone. Files nothing.
+      'I know. I know.' The last image places him somewhere behind his son,
+      making tea.
+    appears_in: [ghost_inside_the_light]
+    relationships:
+      - target: the_carrier
+        nature: "His son; estranged; does not know his father is on the train"
+
+  - id: the_carrier
+    name: "The Carrier"
+    gender: male
+    role: "Installation artist; Corvin Field Services contractor"
+    affiliation: corvin_field_services
+    voice_register: "technical and aesthetic simultaneously; present-tense attention to physical process"
+    signature_moves:
+      - "Concrete sensory attention to the work (calibrating anchors, eating kebab, quality of light)"
+      - "The old RAV4 as emotional signal — drives father's truck model"
+      - "Not asking what the installation is for — professional decision, not ignorance"
+    want: "Complete the installation correctly. To have done the work."
+    need: "Some form of acknowledgment of the estrangement — its resolution, or its acceptance"
+    lie: "The work and its deployment are separable; 'he had done it' exhausts his accountability"
+    confrontation: >
+      He sees the OBSERVATION EVENT notification. Something noticed him.
+      He looks at it. He decides not to file a report. He does not know
+      it was his father.
+    arc_summary: >
+      Completes light installation in Central Asian steppe for Corvin Field
+      Services. Does it with complete attention and real pride. Sees OBSERVATION
+      EVENT notification mid-calibration. Considers it. Doesn't file.
+      The lights go on as scheduled. 'He had done it.'
+    appears_in: [ghost_inside_the_light]
+    relationships:
+      - target: the_spy
+        nature: "His father; estranged; was on the drone that recorded him; does not know"
+
+  - id: felix_lim
+    name: "Felix Lim"
+    age: 26
+    role: "Chief of Staff, Neutral Forge"
+    affiliation: neutral_forge
+    voice_register: >
+      Formal, analytical, institutional. In his own head: plainer but
+      analytic habit persists. Does not think in fragments — thinks in
+      sentences that build toward conclusions.
+    thesis: "The arc of innovation bends toward justice"
+    thesis_arc:
+      sections_1_4: "Stated with full confidence, occasionally checked, always confirmed"
+      section_5: "Reached for, catches slightly, restated"
+      sections_6_8: "Becomes a reflex — he notices he is doing it"
+      sections_9_10: "He stops reaching for it. Absence louder than thesis."
+      section_11: "Something else is there instead. He does not name it yet."
+    key_flaw: >
+      His conclusions are slightly wrong in a way he cannot see.
+      He has the right variables and the wrong model. The reader sees
+      both the correctness of his reasoning and the incorrectness of
+      his conclusion simultaneously.
+    want_by_scene:
+      I: "Confirmation the system works as described"
+      II: "Nothing from Lin — he is exploring, cataloguing"
+      III: "To understand what Lin is under pressure from in terms he was taught"
+      IV: "To perform competence; to be trusted; to be in the room"
+      V: "To be told his framework still applies — the last time he asks"
+      VI: "He is not searching anymore. He receives."
+      VII: "To act correctly. His last institutional act."
+      VIII: "To have a conversation. There is no one to have it with."
+      IX: "To locate responsibility. To find the appeals process."
+      X: "To understand what his report actually did. He gets the answer."
+      XI: "Something he cannot name yet. Possibly: to hear that it mattered."
+    need: "Confirmation that the arc of technology bends toward justice"
+    lie: "Good-faith institutional action within a well-designed system produces just outcomes"
+    arc_summary: >
+      Boards UET-1 as Lin's Chief of Staff. Watches Lin, delivers a folder,
+      files an institutional report at 2:47am. In Lisbon, learns the report was
+      used as a trade chip. Lin has disappeared. Walks the city. Returns south
+      on the train as an agent of the Covenant — not because he was recruited,
+      but because the logic converted him. On the final call, more certain about
+      the Covenant than Lin ever was.
+    appears_in: [the_headless_empire]
+    relationships:
+      - target: lin_yuan_exact
+        nature: "Employer; manager; instrument; only witness to each other's conversion"
+
+  - id: lin_yuan_exact
+    name: "Lin Yuan Exact"
+    role: "CEO, Neutral Forge; builder of the Covenant"
+    affiliation: neutral_forge
+    voice_register: >
+      Aphoristic, minimal, self-contained. Speaks as though reading from
+      a manual he wrote himself. Deviations from baseline are significant:
+      Mongolia (steppe loosened something), dining car (gave Felix everything).
+    signature_moves:
+      - "Statements framed as engineering observations about structure"
+      - "Resuming what he was doing after speaking — eating with complete attention"
+      - "Physical presence as part of voice: a pause where he looks at the goats is the answer"
+      - "What Lin does not say is often more significant than what he does"
+    want_by_scene:
+      I: "Get to Lisbon without incident. Felix is useful, not important."
+      III: "Explains more than intended. Testing whether Felix can receive real information."
+      IV: "Use Felix cleanly. The explanation he gives Felix is also Lin rationalising to himself."
+      V: "Give Felix everything — because Felix is about to be used and Lin owes him the truth. Or: needs a witness."
+      VI: "Does not know Felix is in the corridor."
+      XI: "Needs this to have been real. Felix is the witness who makes it real."
+    need: "Escape from persecution by both empires without paying the cost of escape. A free lunch."
+    lie: "Escape and consequence are separable — he can disappear cleanly, the machine still running, hands unbloodied"
+    arc_summary: >
+      Boards UET-1 knowing he is walking through a gap before it closes.
+      Uses Felix as instrument throughout while, in unguarded moments, making
+      the case that the Covenant was right to build. Disappears before Lisbon.
+      The Covenant runs. In the final call from the wadi, needs to hear it was
+      real. Hangs up before Felix can respond. Settled, not triumphant.
+    appears_in: [the_headless_empire]
+    location_at_story_end: "Saudi Arabia — wadi with goats"
+    fate_ambiguity: >
+      [open] Story presents Lin as having chosen Saudi Arabia — settled, accepted
+      the cost. UET-1 Wiki PDF states: extraction to Geneva was his plan;
+      operatives accepted a better offer and delivered him to Saudi Arabia.
+      He 'expressed no distress.' Voluntary vs. involuntary question unresolved.
+      May be intentional — Lin is unreliable as narrator of his own fate.
+
+  - id: detective_pavel_murkin
+    name: "Detective Pavel Murkin"
+    role: "Border junction detective; reluctant Pono operator"
+    affiliation: "Russian border authorities (implied)"
+    voice_register: "deadpan, procedural, bureaucratic; does not perform"
+    signature_moves:
+      - "Understated description of significant events — the refugee boy described with same flatness as the weather"
+      - "The Pono as irritant, then collaborator, then instrument of mercy"
+      - "'Nothing of note' — the story ends on this phrase; his entire argument"
+    want: "Do his job correctly with minimum necessary involvement of a Pono he didn't request"
+    need: "A reason the procedure matters; a way to act inside an institution that has made meaningful action difficult"
+    lie: "Correctness and mercy are the same thing in a well-functioning institution"
+    arc_summary: >
+      Assigned a Pono he did not request. Opens archive out of boredom.
+      Finds Stepan's file, the soup recipes, the margin symbols. Next day:
+      refugee boy at siding hut with triangle-of-dots card. Understands what
+      Stepan built. Files 'nothing of note: routine drizzle, minor delays,
+      no irregularities.' The boy is gone. Murkin does not stop being a
+      proceduralist. He becomes a different kind.
+    appears_in: [signals_in_the_margins]
+
+  - id: marcus_hale
+    name: "Marcus Hale"
+    role: "Principal, Sable Meridian"
+    affiliation: sable_meridian
+    on_page: false
+    background: >
+      Born ~1963. Arms trade, Balkans, 1990s. Mineral extraction, Congo,
+      early 2000s. 2022: sanctions evasion. Current: Sable Meridian,
+      ~12 employees, 'strategic consulting', Zug.
+    confirmed_operations: [stolar_key_extraction]
+    appears_in: [the_chartered_flesh]
+    note: "Never directly appears in any story. Described through his effects."
+
+
+# ══════════════════════════════════════════════════════════════
+# WORLD INFRASTRUCTURE
+# Physical and institutional structures of the UET-1 universe.
+# ══════════════════════════════════════════════════════════════
+
+world:
+
+  - id: uet1_train
+    label: "UET-1 — The Train"
+    route: "Hong Kong → Lisbon"
+    length_km: 23300
+    jurisdictions: 17
+    age_at_story_time: "7 years"
+    average_speed_kph: 225
+    journey_time: "~3 days (no delays)"
+    gauge_transitions: 5
+    key_cars:
+      observation_car: "Surveillance platform; drone deployment point"
+      dining_car: "Lin's most generous scene"
+      business_car: "Encrypted comms; privacy-filmed windows"
+      car_7: >
+        Gauge-change car. Contains decontamination array. Only flagged
+        passengers are routed here. Compromised relay = Stolar Key
+        Extraction site. 9-step decon procedure; Step 7 is closest
+        biometric read.
+      casino_car: "'Loss and Gain' — documented, not yet in any story"
+    jurisdictional_status: >
+      Perpetual legal fiction: simultaneously in transit through all
+      jurisdictions and subject to none fully. Stopping constitutes a
+      jurisdictional event. Movement is the train's primary legal protection.
+    lin_on_airports: >
+      'An airport is a trap with two doors, and I do not control either of them.
+      The infrastructure of capture has been built into airport systems.
+      The train is different — the empires have not yet learned how to
+      weaponize it.'
+    narrative_function: "23,300km is one long room. Distance is not safety."
+
+  - id: strait_country
+    label: "Strait Country"
+    type: jurisdiction
+    character: >
+      Neutral fiscal zone. Neither empire fully controls it.
+      The Covenant's self-executing contracts are embedded in its fiscal ledger.
+    appears_in: [the_headless_empire]
+
+  - id: stolar_key_extraction
+    label: "The Stolar Key Extraction"
+    type: operation
+    target: "Stolar's $940M Bitcoin holdings"
+    mechanism: brx90
+    carriers: "Four paying passengers ('the friends') + Rowan"
+    extraction_point: "Car 7 decontamination array, Step 7, NIR scan"
+    activation: "Compromised relay broadcasts activation signal"
+    relay_destination: "Hale's operatives, Zug"
+    beneficiary: marcus_hale
+    appears_in: [the_chartered_flesh]
+    open:
+      - "Key split across all five carriers, or replicated in each?"
+
+
+# ══════════════════════════════════════════════════════════════
+# STORIES
+# Each story references ids from the definition blocks above.
+# ══════════════════════════════════════════════════════════════
+
+stories:
+
+  - id: the_chartered_flesh
+    title: "The Chartered Flesh"
+    pov: rowan
+    primary_tension: body_vs_self
+    secondary_tensions: [craft_vs_complicity, visibility_vs_erasure]
+    technologies: [brx90, ecoroute, brx90_masking_compound, stolar_key_extraction]
+    characters: [rowan, marcus_hale]
+    factions: [sable_meridian]
+    summary: >
+      Rowan is recruited by Alex (Hale operative) to carry BRX-90 for four
+      friends on the UET-1. She believes it is a metabolic-enhancement product.
+      In Car 7, the decon array reads the encoded Stolar keys from their bodies.
+      A compromised relay routes the data to Zug. Rowan gets a 'Class 2
+      metabolic variance' notification she cannot decode. At severance, Alex
+      gives her 30 vials of the real masking compound. 'This one actually works.'
+    character_arcs:
+      rowan:
+        you: "Somatic specialist; the body is the only document that can't be forged"
+        need: "Keep her body sovereign"
+        go: "Accepts the BRX-90 job"
+        search: "Delivers the compound; watches the friends"
+        find: "Class 2 metabolic variance — something happened in Car 7"
+        take: "30 vials of real compound; understanding she didn't understand what she was carrying"
+        return: "Holds the vials"
+        change: "Ambiguous — recurring dreams about Car 7 suggest the body holds what the mind hasn't processed"
+    open:
+      - "Do the four friends ever discover what happened to them?"
+      - "Does the real masking compound work the way Rowan thinks it does?"
+
+  - id: ghost_inside_the_light
+    title: "Ghost Inside the Light"
+    pov: [the_spy, the_carrier]
+    pov_structure: "Alternating; two arcs converge"
+    primary_tension: institutional_duty_vs_mercy
+    secondary_tensions: [craft_vs_complicity, proximity_vs_distance]
+    technologies: [pono, ecoroute]
+    characters: [the_spy, the_carrier]
+    factions: [fiduciary_states, corvin_field_services]
+    summary: >
+      The Carrier completes a light installation in the Central Asian steppe
+      for Corvin Field Services — four resonance anchors, visual band, sustained
+      light. Real pride. The Spy deploys a drone from the UET-1 observation car
+      on his final mission before retirement. The drone descends below the
+      refraction layer. He sees the Corvin compound. He sees the RAV4.
+      He recognizes his son. He silences all three Pono instances. The Carrier
+      sees OBSERVATION EVENT, considers it, doesn't file. The Spy recalls the
+      drone. Neither files. The lights go on as scheduled.
+    character_arcs:
+      the_spy:
+        you: "Intelligence officer; one month to retirement"
+        need: "Some form of connection to his son"
+        go: "Deploys the drone"
+        search: "Watches the feed"
+        find: "His son on the tailgate"
+        take: "Silence. 'I know. I know.'"
+        return: "Recalls the drone"
+        change: "Chose mercy over duty; carried the weight of knowing"
+      the_carrier:
+        you: "Installation artist; does beautiful work; doesn't ask what it's for"
+        need: "Acknowledgment of the estrangement — resolution or acceptance"
+        go: "Takes the Corvin contract; goes to the desert"
+        search: "Builds the installation; notices the OBSERVATION EVENT"
+        find: "Something noticed him — he doesn't know it's his father"
+        take: "The choice not to file"
+        return: "Back to the installation. The lights go on."
+        change: "Ambiguous — the pride in the work is unchanged; the choice not to file is a line crossed"
+    convergence: >
+      Both men see each other (one unknowingly) and choose the same silence.
+      The connection is one-directional: The Spy knows. The Carrier does not.
+    open:
+      - "Who is 'the man with the notebook' in the final image?"
+      - "Is Corvin affiliated with either empire or independent?"
+
+  - id: signals_in_the_margins
+    title: "Signals in the Margins"
+    pov: detective_pavel_murkin
+    primary_tension: institutional_duty_vs_mercy
+    secondary_tensions: [memory_vs_amnesia, visibility_vs_erasure]
+    technologies: [pono, mirage_handler, ecoroute]
+    characters: [detective_pavel_murkin]
+    summary: >
+      Murkin is assigned a Pono unit he didn't request. Opens the archive out
+      of boredom; finds Stepan's missing person file — 14,326 documents and
+      soup recipes with margin symbols. Next day: refugee boy at siding hut
+      with a triangle-of-dots card. The Pono explains Mirage Handler: Cold War
+      routing protocol, soup recipes as decoy filler, symbols route people
+      through surveillance gaps. Stepan built this. Murkin files 'nothing of note:
+      routine drizzle, minor delays, no irregularities.' The boy is gone.
+    character_arcs:
+      murkin:
+        you: "Proceduralist; assigned a Pono he didn't want"
+        need: "A reason the procedure matters"
+        go: "Opens the archive out of boredom"
+        search: "14,326 documents; soup recipes; margin symbols"
+        find: "The system Stepan built; the boy at the siding hut"
+        take: "The knowledge and the choice"
+        return: "Files the report"
+        change: "'Nothing of note' as moral act — a different kind of proceduralist"
+    story_argument: >
+      Strategic amnesia is the dominant moral act when the institution's
+      power exceeds its justice.
+    open:
+      - "What happened to Stepan?"
+      - "Is the Mirage Handler network still active beyond this instance?"
+
+  - id: the_headless_empire
+    title: "The Headless Empire, or How Felix Lim Learned the Nature of the World Machine"
+    pov: felix_lim
+    primary_tension: system_vs_person
+    secondary_tensions: [infrastructure_liberation_vs_capture, craft_vs_complicity]
+    technologies: [ecoroute, the_covenant]
+    characters: [felix_lim, lin_yuan_exact]
+    factions: [neutral_forge, fiduciary_states, telluric_empire]
+    structure: "11 sections; Felix's thesis arc maps to Story Circle"
+    summary: >
+      Felix Lim boards the UET-1 as Lin Yuan Exact's Chief of Staff, bound
+      for a Lisbon summit. Over three days, he watches Lin, delivers a folder,
+      overhears the Covenant's activation mechanics, and files an institutional
+      report at 2:47am. In Lisbon, a Strait Country man explains what his report
+      actually did. Lin has already disappeared. Felix returns south on the train
+      as an agent of the Covenant — not recruited, but converted. On the final
+      call, Lin is in a Saudi wadi and needs to hear it was real. Felix, now more
+      certain about the Covenant than Lin ever was, begins to respond. Lin hangs
+      up before he can.
+    character_arcs:
+      felix_lim:
+        you: "Chief of Staff; the arc of innovation bends toward justice"
+        need: "Confirmation the system works as described"
+        go: "The train to Lisbon"
+        search: "Watching Lin; delivering folders; filing reports"
+        find: "Covenant removes accountability by design; his report was a trade chip"
+        take: "Cynicism as clarity — a harder material"
+        return: "South on the train; agent of the Covenant"
+        change: "True believer in the machine's sovereignty. Did not lose his faith. Upgraded it."
+      lin_yuan_exact:
+        you: "CEO of the Forge; built something unchallengeable"
+        need: "Escape without cost — a free lunch"
+        go: "The train, walking through the gap before it closes"
+        search: "For absolution; making the case to himself"
+        find: "No free lunches; the cost is exactly what he was protecting"
+        take: "The world's indifference to elegant plans"
+        return: "The call to Felix"
+        change: "Settled. Commits to the ascetic life. Accepts the cost."
+    central_irony: >
+      Felix ends the story believing in the Covenant more completely than Lin does.
+      Lin built the machine to escape. He escaped. The cost was his ability to be
+      in the world consequentially. Felix was used as a tool. He became the
+      machine's true believer. Neither knows the full shape of this.
+      Felix does not know Lin is unsure he did the right thing.
+      Lin does not know Felix has converted.
+      The sincerity of both is what makes the story work.
+    open:
+      - "What does Felix say after Lin hangs up? (deliberately withheld)"
+      - "Who is the Strait Country man in Lisbon, and how does he know what Felix's report did?"
+      - lin_yuan_exact fate_ambiguity (see characters.lin_yuan_exact.fate_ambiguity)
+
+
+# ══════════════════════════════════════════════════════════════
+# NARRATIVE RULES
+# Apply to all UET-1 stories. Violations are craft errors.
+# ══════════════════════════════════════════════════════════════
+
+narrative_rules:
+
+  tone:
+    - "No villain enjoying their villainy. Lin is not a villain."
+    - "No cheap sentiment. Emotion earns itself through indirection."
+    - "Surveillance is ambient, not dramatic. ECOROUTE hums."
+    - "No explanatory dialogue. Characters do not explain the world to each other."
+    - "The body is always present. If a scene has no physical sensation, something is wrong."
+    - "Humor is dry, procedural, deadpan. Never broad."
+    - "Price must be paid. Nobody escapes consequence."
+    - "Strategic amnesia is the dominant moral act when institution exceeds justice."
+
+  voice:
+    register: "Geopolitical thriller + literary fiction + bureaucratic absurdism, simultaneously"
+    surveillance_rule: "If ECOROUTE or bio-bands become the dramatic point of a scene, something has gone wrong"
+    irony_rule: "Irony is carried structurally — by juxtaposition, not by comment"
+    body_rule: "Physical sensation is not decoration. What people eat, the quality of light, the motion of the train."
+
+  moral_framework:
+    - "Price must be paid"
+    - "Strategic amnesia is the dominant moral act when institution > justice"
+    - "Systems built to liberate and systems built to capture look identical from outside"
+    - "The body records what the mind has not processed"
+    - "Distance is not safety. 23,300km is one long room."
+    - "The arc of innovation bends toward capture. Not always. Enough."
