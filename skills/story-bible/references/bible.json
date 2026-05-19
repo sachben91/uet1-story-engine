@@ -35,27 +35,27 @@
       "tiers": [
         {
           "color": "green",
-          "meaning": "Compliant — unrestricted access to all cars and services"
+          "meaning": "Compliant \u2014 unrestricted access to all cars and services"
         },
         {
           "color": "yellow",
-          "meaning": "Monitoring — minor anomalies flagged, movement logged"
+          "meaning": "Monitoring \u2014 minor anomalies flagged, movement logged"
         },
         {
           "color": "amber",
-          "meaning": "Elevated concern — restricted to assigned car, supervisor review pending"
+          "meaning": "Elevated concern \u2014 restricted to assigned car, supervisor review pending"
         },
         {
           "color": "deep amber",
-          "meaning": "High risk — escort required for any movement, under active surveillance"
+          "meaning": "High risk \u2014 escort required for any movement, under active surveillance"
         },
         {
           "color": "red",
-          "meaning": "Detention pending — confined to compartment, jurisdictional handoff being arranged"
+          "meaning": "Detention pending \u2014 confined to compartment, jurisdictional handoff being arranged"
         },
         {
           "color": "black",
-          "meaning": "Revocation — identity suspended, biometric profile flagged across all ECOROUTE nodes. Functionally non-person."
+          "meaning": "Revocation \u2014 identity suspended, biometric profile flagged across all ECOROUTE nodes. Functionally non-person."
         }
       ]
     },
@@ -63,13 +63,59 @@
       "description": "Institutional memory device issued to transit officials and senior crew",
       "function": "Persistent archive system with active recall, behavioral pattern matching, and cross-referencing of passenger histories",
       "notable_traits": [
-        "Has opinions — will editorialize in output if not suppressed",
+        "Has opinions \u2014 will editorialize in output if not suppressed",
         "Continues background monitoring even when told to stop",
         "Files reports that may contain 'nothing of note' as a finding",
         "Can instantiate multiple behavioral instances (Clerk, Hacker, Agent modes observed)",
         "Relentless in recall; cannot forget unless explicitly purged"
       ],
-      "known_users": ["Detective Pavel Murkin (issued against his will)", "The Spy (Fiduciary States intelligence officer)"]
+      "known_users": [
+        "Detective Pavel Murkin (issued against his will)",
+        "The Spy (Fiduciary States intelligence officer)"
+      ]
+    }
+  },
+  "derealized_zones": {
+    "concept": {
+      "definition": "Derealized Zones (DRZs) are physical territories that have been functionally re-jurisdicted through software rather than law or land reform. Where Special Economic Zones (SEZs) reshape territory through legal exemptions and physical infrastructure, DRZs reshape territory through perceptual and behavioral infrastructure — the software layer becomes the jurisdiction. Inside a DRZ, what is rendered visible, what identities are legible, and what transactions are possible are determined by the zone's operating protocol, not the host nation's law.",
+      "mechanism": "A DRZ is established when a territory's built environment is instrumented so completely — sensors, overlay networks, biometric readers, protocol enforcement nodes — that the software stack achieves full environmental coverage. At that threshold, the stack can selectively render or suppress: infrastructure, populations, transactions, even weather data. The physical space has not changed. The experienced space has been terraformed.",
+      "relationship_to_ECOROUTE": "ECOROUTE does not operate inside DRZs. Each DRZ runs its own biometric stack, which may or may not share data with ECOROUTE at zone boundaries. When UET-1 passes through a DRZ, passengers' bio-bands temporarily rekey to the DRZ's authentication layer. Zone boundary crossing is logged, but the log is encrypted under the zone operator's keys — not accessible to UET-1 operations or any single-nation authority. Exiting triggers a re-sync that overwrites the in-zone record with a compliance summary.",
+      "relationship_to_sovereignty": "DRZs are not legally sovereign. The host nation retains formal jurisdiction. In practice, the host nation cannot enforce laws the DRZ's software stack does not render enforceable. A body the zone does not register has not arrived. A transaction the zone does not log has not occurred.",
+      "key_tension": "DRZs were sold as next-generation infrastructure optimization. They function as the largest perception-management operations in human history."
+    },
+    "zones": {
+      "Zoothesia": {
+        "location": "Steppe Corridor, Kazakhstan — approximately 400km west of Astana, spanning ~220km of the Moscow–Astana leg",
+        "established_by": "Joint Telluric Empire / Neutral Forge consortium; Neutral Forge holds the protocol license",
+        "operating_protocol": "Zoothesia Protocols — a perception-management stack derived from Neutral Forge's infrastructure tooling",
+        "stated_purpose": "Steppe corridor optimization: reducing cognitive load on long-haul transit by curating environmental data feeds and suppressing destabilizing sightlines (industrial decay, unauthorized settlements, contested border infrastructure)",
+        "actual_function": "Selective erasure of the Kazakhstani steppe's actual population and infrastructure from the perceptual record. Communities outside the zone's registered land-use categories are not rendered. Pipelines and extraction operations not aligned with Telluric Empire supply agreements do not appear on any overlay. The steppe passengers and operators see inside Zoothesia is not the steppe that exists.",
+        "hidden_populations": "A significant undocumented population — nomadic herding communities, cross-border gray-market traders, and dissident infrastructure workers — lives in the physical space the Zoothesia Protocols have declared non-existent. Invisible to ECOROUTE. Invisible to the zone's biometric readers. Not in any system that matters.",
+        "connection_to_The_Lights": "The Lights installation lies at the western edge of Zoothesia's software envelope. The resonance anchors that produce The Lights also mark the DRZ boundary — where the zone's rendering infrastructure bleeds into uncontrolled steppe. Passengers see them as sublime. They are also a perimeter marker.",
+        "connection_to_Mirage_Handler": "The Mirage Handler protocol has a known handshake with Zoothesia's boundary authentication — Cold War disappearance infrastructure interfacing with its commercial successor.",
+        "narrative_uses": [
+          "Characters can step into Zoothesia's unrendered space — the zone's erasure logic works on anyone who exits the registered population layer",
+          "Stopping inside Zoothesia triggers a four-way jurisdictional conflict: host nation, Telluric Empire, Neutral Forge, and UET-1 authority all have competing claims, none fully enforceable",
+          "The hidden population knows the zone's blind spots better than its operators do"
+        ]
+      },
+      "Caduceus": {
+        "location": "Belgrade–Sofia corridor — spans ~180km of the Paris–Istanbul leg, anchored at the former Dimitrovgrad rail junction (Serbia/Bulgaria border zone)",
+        "established_by": "Sable Meridian consortium fronted through a Liechtenstein-registered infrastructure fund; day-to-day operations licensed to a Neutral Forge subsidiary",
+        "operating_protocol": "Caduceus Protocols — originally a pharmaceutical logistics and cold-chain verification stack, now a full territorial operating system",
+        "stated_purpose": "Secure pharmaceutical and biotech logistics corridor, established to handle temperature-sensitive compounds and controlled substances under a single cross-border compliance framework — bypassing the 11 separate national pharmaceutical authorities that otherwise govern this stretch",
+        "actual_function": "A gray-market logistics processing zone where pharmaceutical compliance is the primary mechanism of territorial control. Inside Caduceus, pharmaceutical identity — what compounds are registered to your biometric profile — carries the same legal weight as civic identity. The Tirzepatide Trail runs through Caduceus; the zone's compliance stack is what makes the trail viable at industrial scale.",
+        "physical_character": "Visible architecture: a network of climate-controlled waystation structures in the muted blue-grey livery of the operating subsidiary. Looks like logistics infrastructure. Is also a perceptual apparatus.",
+        "ECOROUTE_behavior": "On exit, bio-bands re-sync with ECOROUTE. The re-sync writes only: 'transit through compliant pharmaceutical corridor.' What the bio-band recorded inside is overwritten. Caduceus does not leak.",
+        "connection_to_Sable_Meridian": "Marcus Hale uses Caduceus as the primary European handoff point for gray-market compounds. The zone's pharmaceutical compliance stack functions as a laundering layer — substances that enter unregistered exit with a Caduceus Protocol certification most downstream authorities accept without question.",
+        "connection_to_The_Covenant": "The Covenant was piloted inside Caduceus before Lin Yuan Exact took it global. The zone's 37-node contract architecture is a direct inheritance of that pilot. Several of the 37 Covenant keyholders are Caduceus infrastructure operators.",
+        "connection_to_BRX_90": "BRX-90 was designed to be administered inside Caduceus, where its biometric integration would be logged under the pharmaceutical compliance stack rather than ECOROUTE — making the injection a compliant medical procedure in the official record.",
+        "narrative_uses": [
+          "Rowan's peptide operation depends on Caduceus transit — the zone is both the trail's corridor and its legitimizing apparatus",
+          "A character whose pharmaceutical profile is altered inside Caduceus exits as a different person, biometrically",
+          "The Covenant's pilot architecture still runs live inside Caduceus — anyone who understands the original keystructure has leverage over the global system"
+        ]
+      }
     }
   },
   "key_locations": {
@@ -84,7 +130,7 @@
     },
     "Steppe_Corridor": {
       "description": "The vast Central Asian segment of the UET-1 route",
-      "notable_events": "Location of The Lights installation; Russian broad gauge territory; Murkin's patrol jurisdiction"
+      "notable_events": "Location of The Lights installation and the Zoothesia DRZ; Russian broad gauge territory; Murkin's patrol jurisdiction"
     },
     "Cabin_7_14": {
       "description": "Lin Yuan Exact's cabin aboard UET-1",
@@ -105,7 +151,10 @@
     "Neutral_Forge": {
       "description": "Technology conglomerate headquartered in Strait Country",
       "CEO": "Lin Yuan Exact",
-      "products": ["The Covenant (self-executing contract system)", "Exact Yield Semiconductors (subsidiary)"],
+      "products": [
+        "The Covenant (self-executing contract system)",
+        "Exact Yield Semiconductors (subsidiary)"
+      ],
       "motto_implied": "Build the rails. Own the rails. Become the rails."
     },
     "Sable_Meridian": {
@@ -117,7 +166,9 @@
     "Corvin_Field_Services": {
       "description": "Gray-market contractor arm of Sable Meridian",
       "operations": "Deploys personnel for deniable operations along UET-1 corridor",
-      "known_operatives": ["The Carrier (light installation contractor)"]
+      "known_operatives": [
+        "The Carrier (light installation contractor)"
+      ]
     }
   },
   "key_figures": {
@@ -125,19 +176,28 @@
       "role": "Arms broker and gray-market logistics coordinator",
       "affiliation": "Sable Meridian / Zug",
       "methods": "Operates via intermediaries (Alex, Karel); monitors operations through biometric feeds remotely",
-      "known_operations": ["Stolar Key Extraction", "BRX-90 compound deployment via Rowan"]
+      "known_operations": [
+        "Stolar Key Extraction",
+        "BRX-90 compound deployment via Rowan"
+      ]
     },
     "Lin_Yuan_Exact": {
       "role": "CEO of Neutral Forge",
-      "traits": ["Aphoristic", "reads from a manual he wrote himself", "visionary bordering on messianic"],
+      "traits": [
+        "Aphoristic",
+        "reads from a manual he wrote himself",
+        "visionary bordering on messianic"
+      ],
       "fate": "Disappeared from UET-1; resurfaced in Saudi Arabia tending goats",
-      "creation": "The Covenant — self-executing time-locked contracts requiring 24 of 37 keys across 19 jurisdictions"
+      "creation": "The Covenant \u2014 self-executing time-locked contracts requiring 24 of 37 keys across 19 jurisdictions"
     },
     "Captain_Eriksson": {
       "role": "Captain of UET-1",
       "nationality": "UET-1 (the train is his country)",
-      "defining_trait": "Refuses to stop the train regardless of events aboard — stopping is a jurisdictional event and he treats jurisdiction as sacred",
-      "known_refusals": ["Refused to stop when Lin Yuan Exact disappeared"]
+      "defining_trait": "Refuses to stop the train regardless of events aboard \u2014 stopping is a jurisdictional event and he treats jurisdiction as sacred",
+      "known_refusals": [
+        "Refused to stop when Lin Yuan Exact disappeared"
+      ]
     }
   },
   "key_operations_and_artifacts": {
@@ -166,7 +226,11 @@
     },
     "Mirage_Handler": {
       "description": "Cold War-era routing protocol for erasing persons from transit manifests",
-      "symbols": ["Triangle of dots", "Wavy lines", "Imperfect circle"],
+      "symbols": [
+        "Triangle of dots",
+        "Wavy lines",
+        "Imperfect circle"
+      ],
       "current_use": "Repurposed by refugee networks to erase identities from ECOROUTE manifests",
       "archive_state": "Many Mirage files replaced with soup recipes (shchi, pelmeni, stewed carp) by legacy contractors",
       "significance": "The infrastructure of disappearance, now serving the disappeared"
@@ -197,25 +261,179 @@
       "effect": "More severe than a black bio-band; the system pretends the person never existed"
     }
   },
+  "route_stops": {
+    "note": "All times are approximate rail journey durations between consecutive stops, not total elapsed trip time.",
+    "terminus_west": "Lagos",
+    "terminus_east": "Woodlands, Singapore",
+    "sections": {
+      "Iberian_Section": {
+        "stops": [
+          {
+            "from": "Lagos",
+            "to": "Tunes",
+            "duration": "12m"
+          },
+          {
+            "from": "Tunes",
+            "to": "Lisbon",
+            "duration": "58m"
+          },
+          {
+            "from": "Lisbon",
+            "to": "Madrid",
+            "duration": "2h 41m"
+          },
+          {
+            "from": "Madrid",
+            "to": "Barcelona",
+            "duration": "2h 28m"
+          }
+        ]
+      },
+      "Western_Europe": {
+        "stops": [
+          {
+            "from": "Barcelona",
+            "to": "Paris",
+            "duration": "4h 04m"
+          }
+        ]
+      },
+      "Eurasian_Hinge": {
+        "note": "The Caduceus DRZ occupies ~180km of the Paris–Istanbul leg (Belgrade–Sofia corridor). Bio-bands rekey on entry and exit. ECOROUTE re-sync on exit overwrites in-zone record.",
+        "stops": [
+          {
+            "from": "Paris",
+            "to": "Istanbul",
+            "duration": "12h 30m"
+          },
+          {
+            "from": "Istanbul",
+            "to": "Moscow",
+            "duration": "9h 20m"
+          }
+        ]
+      },
+      "Siberian_Crossing": {
+        "note": "The Zoothesia DRZ occupies ~220km of the Moscow–Astana leg (~400km west of Astana). The Lights installation marks its western boundary. Bio-bands rekey on entry; zone log encrypted under Neutral Forge Covenant keys.",
+        "stops": [
+          {
+            "from": "Moscow",
+            "to": "Astana",
+            "duration": "16h 30m"
+          },
+          {
+            "from": "Astana",
+            "to": "Almaty",
+            "duration": "5h 30m"
+          },
+          {
+            "from": "Almaty",
+            "to": "Dostyk",
+            "duration": "2h",
+            "note": "Gauge change: Russian broad (1520mm) \u2192 Chinese standard (1435mm). Dwell 60\u201390 min for bogie transition and ECOROUTE decontamination sweep."
+          },
+          {
+            "from": "Dostyk",
+            "to": "Shanghai",
+            "duration": "12h"
+          }
+        ]
+      },
+      "China_High_Speed_Spine": {
+        "stops": [
+          {
+            "from": "Shanghai",
+            "to": "Beijing",
+            "duration": "5h 07m"
+          },
+          {
+            "from": "Beijing",
+            "to": "Guangzhou",
+            "duration": "9h 01m"
+          },
+          {
+            "from": "Guangzhou",
+            "to": "Hong Kong",
+            "duration": "36m"
+          },
+          {
+            "from": "Hong Kong",
+            "to": "Kunming",
+            "duration": "5h 58m"
+          }
+        ]
+      },
+      "Mainland_Southeast_Asia": {
+        "stops": [
+          {
+            "from": "Kunming",
+            "to": "Hanoi",
+            "duration": "3h 19m"
+          },
+          {
+            "from": "Hanoi",
+            "to": "Vientiane",
+            "duration": "2h 34m"
+          },
+          {
+            "from": "Vientiane",
+            "to": "Bangkok",
+            "duration": "2h 33m"
+          },
+          {
+            "from": "Bangkok",
+            "to": "Padang Besar",
+            "duration": "4h 01m"
+          }
+        ]
+      },
+      "Malaysia_Corridor": {
+        "stops": [
+          {
+            "from": "Padang Besar",
+            "to": "Kuala Lumpur",
+            "duration": "2h 03m"
+          },
+          {
+            "from": "Kuala Lumpur",
+            "to": "Gemas",
+            "duration": "34m"
+          },
+          {
+            "from": "Gemas",
+            "to": "Johor Bahru",
+            "duration": "50m"
+          },
+          {
+            "from": "Johor Bahru",
+            "to": "Woodlands",
+            "duration": "1m"
+          }
+        ]
+      }
+    }
+  },
   "narrative_rules": [
-    "Stopping is a jurisdictional event — the train almost never stops, and when it does, it changes everything.",
+    "Stopping is a jurisdictional event \u2014 the train almost never stops, and when it does, it changes everything.",
     "The train is not neutral. Every car is a political statement.",
     "Surveillance sees everything except what it is programmed to ignore.",
     "Gray markets fill every gap left by formal markets.",
     "The infrastructure of disappearance outlives the people it was built to disappear.",
     "Biometric identity is legal identity. What the system cannot read does not exist.",
-    "Distance is not safety — 23,300km is one long room.",
+    "Distance is not safety \u2014 23,300km is one long room.",
     "Jurisdictions overlap, contradict, and bargain. No single authority governs the whole.",
-    "The most powerful thing on the UET-1 is not a weapon — it is a key.",
-    "Characters who choose strategic amnesia are making a moral argument, not an evasion."
+    "The most powerful thing on the UET-1 is not a weapon \u2014 it is a key.",
+    "Characters who choose strategic amnesia are making a moral argument, not an evasion.",
+    "A DRZ does not change the law. It changes what the law can see."
   ],
   "tone_notes": [
     "The world is sophisticated, bureaucratically absurd, and deeply human beneath its systems.",
-    "Surveillance is ambient, not dramatic — it hums in the background of every scene.",
-    "Moral choices are structural, not individual — the system creates the dilemma.",
-    "Humor is dry, technical, and dark — never broad.",
+    "Surveillance is ambient, not dramatic \u2014 it hums in the background of every scene.",
+    "Moral choices are structural, not individual \u2014 the system creates the dilemma.",
+    "Humor is dry, technical, and dark \u2014 never broad.",
     "The train moves. Events happen in transit. Stasis is impossible.",
-    "Names of systems and protocols should feel institutional, slightly opaque — like real bureaucratic language.",
+    "Names of systems and protocols should feel institutional, slightly opaque \u2014 like real bureaucratic language.",
     "The mundane and the geopolitical occupy the same sentence without apology."
   ]
 }

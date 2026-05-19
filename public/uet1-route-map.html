@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UET-1 — Route Map</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #06040C;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 32px 16px;
+    font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  }
+
+  #atlas-wrap {
+    width: 100%;
+    max-width: 1380px;
+    background: #0A0814;
+    border: 1px solid #2A1A50;
+    box-shadow: 0 0 80px rgba(160,60,255,0.12), 0 2px 4px rgba(0,0,0,0.9);
+  }
+
+  #atlas-header {
+    background: #06040C;
+    color: #EAD8FF;
+    padding: 20px 36px;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    border-bottom: 1px solid #2A1A50;
+  }
+  #atlas-header h1 {
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+    color: #F0E4FF;
+  }
+  #atlas-header .meta {
+    font-size: 11px;
+    font-weight: 300;
+    letter-spacing: 0.12em;
+    color: #5A3A90;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  #map-svg { display: block; width: 100%; height: auto; }
+
+  .sphere        { fill: #03020A; }
+  .graticule     { fill: none; stroke: #1C1238; stroke-width: 0.4; opacity: 0.9; }
+  .country       { stroke: #221640; stroke-width: 0.4; stroke-linejoin: round; }
+  .borders       { fill: none; stroke: #2A1A50; stroke-width: 0.5; }
+
+  .route-glow    { fill: none; stroke: #C020A0; stroke-width: 12; stroke-linecap: round; stroke-linejoin: round; opacity: 0.2; }
+  .route-line    { fill: none; stroke: #E030B0; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+  .ocean-label {
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    font-style: italic;
+    font-size: 11px;
+    fill: #201444;
+    opacity: 1;
+    pointer-events: none;
+  }
+  .country-label {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 7.5px;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    fill: #3A2468;
+    pointer-events: none;
+  }
+  .stop-label {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 9.5px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    fill: #EAD8FF;
+    paint-order: stroke;
+    stroke: rgba(4,2,10,0.97);
+    stroke-width: 3px;
+    pointer-events: none;
+  }
+  .stop-label-sm {
+    font-size: 8.5px;
+    font-weight: 400;
+  }
+  .gauge-tag {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 7px;
+    font-weight: 300;
+    fill: #E030B0;
+    paint-order: stroke;
+    stroke: rgba(4,2,10,0.97);
+    stroke-width: 2.5px;
+    pointer-events: none;
+  }
+  .drz-name {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 8.5px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    paint-order: stroke;
+    stroke: rgba(4,2,10,0.9);
+    stroke-width: 3px;
+    pointer-events: none;
+  }
+  .drz-sub {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 7px;
+    font-weight: 300;
+    font-style: italic;
+    letter-spacing: 0.06em;
+    paint-order: stroke;
+    stroke: rgba(4,2,10,0.9);
+    stroke-width: 2.5px;
+    pointer-events: none;
+  }
+
+  #atlas-footer {
+    background: #06040C;
+    border-top: 1px solid #2A1A50;
+    padding: 18px 36px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 32px;
+    align-items: start;
+  }
+  .footer-section h3 {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #5A3A90;
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #2A1A50;
+  }
+  .legend-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 7px;
+    font-size: 10px;
+    color: #9070C0;
+  }
+  .legend-row svg { flex-shrink: 0; }
+
+  .footer-drz { font-size: 10px; color: #9070C0; line-height: 1.65; }
+  .footer-drz h4 {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+    margin-top: 10px;
+  }
+  .footer-drz h4:first-child { margin-top: 0; }
+  .footer-drz p { font-weight: 300; }
+
+  .footer-stats { font-size: 10px; color: #9070C0; line-height: 2; }
+  .footer-stats .stat {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px dotted #2A1A50;
+    padding: 2px 0;
+  }
+  .footer-stats .stat-val { font-weight: 600; color: #EAD8FF; }
+
+  #tip {
+    position: fixed;
+    background: #0A0814;
+    color: #EAD8FF;
+    border: 1px solid #4020A0;
+    padding: 10px 14px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 11.5px;
+    line-height: 1.55;
+    max-width: 280px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.12s;
+    z-index: 999;
+    box-shadow: 0 0 24px rgba(180,60,255,0.35), 0 4px 20px rgba(0,0,0,0.9);
+  }
+  #tip.show { opacity: 1; }
+  #tip .tip-name { font-weight: 600; font-size: 13px; margin-bottom: 2px; }
+  #tip .tip-sec  { color: #5A3A90; font-size: 10px; letter-spacing: 0.06em; }
+  #tip .tip-dur  { font-style: italic; font-size: 10.5px; margin-top: 4px; color: #9070C0; }
+</style>
+</head>
+<body>
+
+<div id="atlas-wrap">
+
+  <div id="atlas-header">
+    <h1>Unified Eurasian Transit Line 1 — Route Survey</h1>
+    <span class="meta">Lagos · Portugal &nbsp;→&nbsp; Woodlands · Singapore &nbsp;·&nbsp; 23,300 km &nbsp;·&nbsp; 17 Jurisdictions</span>
+  </div>
+
+  <svg id="map-svg" viewBox="0 0 1380 720">
+    <defs>
+      <clipPath id="map-clip">
+        <rect x="0" y="0" width="1380" height="720"/>
+      </clipPath>
+      <filter id="f-route-glow" x="-30%" y="-30%" width="160%" height="160%">
+        <feGaussianBlur stdDeviation="5"/>
+      </filter>
+      <filter id="f-stop-glow" x="-120%" y="-120%" width="340%" height="340%">
+        <feGaussianBlur stdDeviation="4" result="blur"/>
+        <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+      <filter id="f-drz-glow" x="-30%" y="-30%" width="160%" height="160%">
+        <feGaussianBlur stdDeviation="8" result="blur"/>
+        <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+    </defs>
+  </svg>
+
+  <div id="atlas-footer">
+    <div class="footer-section">
+      <h3>Legend</h3>
+      <div class="legend-row">
+        <svg width="22" height="14"><line x1="0" y1="7" x2="22" y2="7" stroke="#E030B0" stroke-width="2"/></svg>
+        UET-1 Route
+      </div>
+      <div class="legend-row">
+        <svg width="22" height="14">
+          <circle cx="11" cy="7" r="6" fill="#0A0814" stroke="#E030B0" stroke-width="1.8"/>
+          <circle cx="11" cy="7" r="3" fill="#E030B0"/>
+        </svg>
+        Terminus
+      </div>
+      <div class="legend-row">
+        <svg width="22" height="14">
+          <circle cx="11" cy="7" r="4.5" fill="#0A0814" stroke="#9070C0" stroke-width="1.2"/>
+          <circle cx="11" cy="7" r="1.8" fill="#9070C0"/>
+        </svg>
+        Station
+      </div>
+      <div class="legend-row">
+        <svg width="22" height="14">
+          <polygon points="11,1 20,7 11,13 2,7" fill="#0A0814" stroke="#E030B0" stroke-width="1.6"/>
+          <circle cx="11" cy="7" r="2.2" fill="#E030B0"/>
+        </svg>
+        Gauge Change
+      </div>
+      <div class="legend-row">
+        <svg width="22" height="14">
+          <ellipse cx="11" cy="7" rx="10" ry="6" fill="rgba(220,40,180,0.2)" stroke="#E030C0" stroke-width="1" stroke-dasharray="4,3"/>
+        </svg>
+        Caduceus DRZ
+      </div>
+      <div class="legend-row">
+        <svg width="22" height="14">
+          <ellipse cx="11" cy="7" rx="10" ry="6" fill="rgba(40,220,160,0.2)" stroke="#20D090" stroke-width="1" stroke-dasharray="4,3"/>
+        </svg>
+        Zoothesia DRZ
+      </div>
+    </div>
+
+    <div class="footer-section">
+      <h3>De-Realized Zones</h3>
+      <div class="footer-drz">
+        <h4 style="color:#E030C0;">Caduceus</h4>
+        <p>Belgrade–Sofia corridor. Pharmaceutical compliance zone. Bio-bands rekey on entry and exit. ECOROUTE record overwritten on exit. The Tirzepatide Trail runs through here.</p>
+        <h4 style="color:#20D090;">Zoothesia</h4>
+        <p>~220 km west of Astana. Kazakhstani steppe. Populations outside registered land-use categories not rendered. The Lights installation marks the western boundary.</p>
+      </div>
+    </div>
+
+    <div class="footer-section">
+      <h3>Route Data</h3>
+      <div class="footer-stats">
+        <div class="stat"><span>Total length</span><span class="stat-val">23,300 km</span></div>
+        <div class="stat"><span>Jurisdictions</span><span class="stat-val">17</span></div>
+        <div class="stat"><span>Gauge widths</span><span class="stat-val">5</span></div>
+        <div class="stat"><span>Operating speed</span><span class="stat-val">225 km/h</span></div>
+        <div class="stat"><span>Passenger capacity</span><span class="stat-val">2,347</span></div>
+        <div class="stat"><span>Years in operation</span><span class="stat-val">7</span></div>
+        <div class="stat"><span>Gauge change at Dostyk</span><span class="stat-val">1520→1435 mm</span></div>
+        <div class="stat" style="border:none; padding-top:8px; font-style:italic; color:#3A1A70; font-size:9px;">
+          <span>Stopping is a jurisdictional event.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="tip"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
+<script>
+
+const STOPS = [
+  { name:"Lagos",        coord:[-8.67, 37.10], type:"terminus", section:"Western Terminus",            dur:"" },
+  { name:"Lisbon",       coord:[-9.14, 38.70], type:"major",    section:"Iberian Section",             dur:"58m from Lagos" },
+  { name:"Madrid",       coord:[-3.70, 40.40], type:"major",    section:"Iberian Section",             dur:"2h 41m from Lisbon" },
+  { name:"Barcelona",    coord:[ 2.15, 41.40], type:"major",    section:"Iberian Section",             dur:"2h 28m from Madrid" },
+  { name:"Paris",        coord:[ 2.35, 48.90], type:"major",    section:"Western Europe",              dur:"4h 04m from Barcelona" },
+  { name:"Istanbul",     coord:[29.00, 41.00], type:"major",    section:"Eurasian Hinge",              dur:"12h 30m from Paris" },
+  { name:"Moscow",       coord:[37.60, 55.80], type:"major",    section:"Eurasian Hinge",              dur:"9h 20m from Istanbul" },
+  { name:"Astana",       coord:[71.40, 51.20], type:"major",    section:"Siberian Crossing",           dur:"16h 30m from Moscow" },
+  { name:"Almaty",       coord:[76.90, 43.30], type:"major",    section:"Siberian Crossing",           dur:"5h 30m from Astana" },
+  { name:"Dostyk",       coord:[82.30, 45.00], type:"gauge",    section:"Siberian Crossing",           dur:"2h from Almaty · Gauge change 1520mm → 1435mm · Dwell 60–90 min" },
+  { name:"Beijing",      coord:[116.4, 39.90], type:"major",    section:"China High-Speed",            dur:"14h from Dostyk" },
+  { name:"Shanghai",     coord:[121.5, 31.20], type:"major",    section:"China High-Speed",            dur:"4h 30m from Beijing" },
+  { name:"Guangzhou",    coord:[113.3, 23.10], type:"major",    section:"China High-Speed",            dur:"7h 30m from Shanghai" },
+  { name:"Hong Kong",    coord:[114.2, 22.30], type:"major",    section:"China High-Speed",            dur:"36m from Guangzhou" },
+  { name:"Kunming",      coord:[102.7, 25.10], type:"major",    section:"China High-Speed",            dur:"5h 58m from Hong Kong" },
+  { name:"Hanoi",        coord:[105.8, 21.00], type:"major",    section:"Mainland SE Asia",            dur:"3h 19m from Kunming" },
+  { name:"Vientiane",    coord:[102.6, 17.90], type:"major",    section:"Mainland SE Asia",            dur:"2h 34m from Hanoi" },
+  { name:"Bangkok",      coord:[100.5, 13.80], type:"major",    section:"Mainland SE Asia",            dur:"2h 33m from Vientiane" },
+  { name:"Padang Besar", coord:[100.4,  6.70], type:"minor",    section:"Malaysia Corridor",           dur:"4h 01m from Bangkok" },
+  { name:"Kuala Lumpur", coord:[101.7,  3.10], type:"major",    section:"Malaysia Corridor",           dur:"2h 03m from Padang Besar" },
+  { name:"Woodlands",    coord:[103.8,  1.40], type:"terminus", section:"Eastern Terminus — Singapore",dur:"1h 25m from Kuala Lumpur" },
+];
+
+const DRZS = [
+  {
+    id:"caduceus", name:"CADUCEUS", sub:"De-Realized Zone",
+    center:[21.5, 43.0], radiusPx:52, seed:314,
+    fill:"rgba(220,30,180,0.18)", stroke:"#E020C0", nameCol:"#E020C0",
+  },
+  {
+    id:"zoothesia", name:"ZOOTHESIA", sub:"De-Realized Zone",
+    center:[63.0, 50.5], radiusPx:80, seed:271,
+    fill:"rgba(20,220,150,0.18)", stroke:"#18D088", nameCol:"#18D088",
+  },
+];
+
+// Very dark purple-black tones — landmasses are shadow, not color
+const FILLS = [
+  "#141028","#180C28","#10081E","#1C1230",
+  "#160E24","#1A102C","#0E0A1C","#20162E",
+];
+
+const C_LABELS = [
+  [-7,39,"Portugal"],[-3,40,"Spain"],[2,46,"France"],
+  [13,51,"Germany"],[12,43,"Italy"],[25,46,"Romania"],
+  [24,42,"Bulgaria"],[21,44,"Serbia"],[22,39,"Greece"],
+  [35,39,"Turkey"],[44,42,"Georgia"],[48,40,"Azerbaijan"],
+  [60,54,"Russia"],[68,48,"Kazakhstan"],[66,41,"Uzbekistan"],
+  [58,40,"Turkmenistan"],[47,32,"Iraq"],[53,33,"Iran"],
+  [36,25,"Saudi Arabia"],[79,22,"India"],[104,46,"Mongolia"],
+  [104,36,"China"],[105,16,"Vietnam"],[103,18,"Laos"],
+  [101,15,"Thailand"],[96,20,"Myanmar"],[109,3,"Malaysia"],
+  [25,53,"Belarus"],[32,49,"Ukraine"],[20,52,"Poland"],
+];
+
+const OCEAN_LABELS = [
+  [-20,28,"Atlantic Ocean",-8],
+  [78,12,"Indian Ocean",0],
+  [118,10,"South China Sea",-10],
+];
+
+const W = 1380, H = 720;
+const svg = d3.select("#map-svg").attr("viewBox",`0 0 ${W} ${H}`);
+
+// Fit the projection to the actual route line with padding
+const routeLine = {
+  type:"Feature",
+  geometry:{ type:"LineString", coordinates: STOPS.map(s => s.coord) }
+};
+
+const proj = d3.geoNaturalEarth1()
+  .fitExtent([[50, 30],[W-50, H-30]], routeLine);
+
+const pathGen = d3.geoPath(proj);
+const graticule = d3.geoGraticule().step([15,15]);
+
+// Generate squiggly state-like border in pixel space
+function drzBorderPath(cx, cy, baseR, seed) {
+  let s = seed;
+  const rng = () => { s = (s * 16807) % 2147483647; return (s - 1) / 2147483646; };
+
+  const N = 32;
+  const pts = [];
+  for (let i = 0; i < N; i++) {
+    const baseAngle = (i / N) * Math.PI * 2;
+    const r = baseR * (0.68 + rng() * 0.64);
+    const a = baseAngle + (rng() - 0.5) * (Math.PI * 2 / N) * 0.8;
+    pts.push([cx + r * Math.cos(a), cy + r * Math.sin(a)]);
+  }
+  pts.push(pts[0]);
+
+  let d = `M ${pts[0][0].toFixed(1)},${pts[0][1].toFixed(1)}`;
+  for (let i = 1; i < pts.length; i++) {
+    const [x1, y1] = pts[i - 1];
+    const [x2, y2] = pts[i];
+    const steps = 5;
+    for (let j = 1; j <= steps; j++) {
+      const t = j / (steps + 1);
+      const mx = x1 + (x2 - x1) * t + (rng() - 0.5) * baseR * 0.22;
+      const my = y1 + (y2 - y1) * t + (rng() - 0.5) * baseR * 0.22;
+      d += ` L ${mx.toFixed(1)},${my.toFixed(1)}`;
+    }
+    d += ` L ${x2.toFixed(1)},${y2.toFixed(1)}`;
+  }
+  return d + ' Z';
+}
+
+d3.json("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json").then(world => {
+
+  const features = topojson.feature(world, world.objects.countries).features;
+  const borders  = topojson.mesh(world, world.objects.countries, (a,b) => a !== b);
+
+  const mg = svg.append("g").attr("clip-path","url(#map-clip)");
+
+  mg.append("rect").attr("width",W).attr("height",H).attr("fill","#03020A");
+
+  mg.append("path").datum({type:"Sphere"})
+    .attr("class","sphere").attr("d",pathGen);
+
+  mg.append("path").datum(graticule())
+    .attr("class","graticule").attr("d",pathGen);
+
+  mg.selectAll(".country")
+    .data(features).join("path")
+    .attr("class","country")
+    .attr("d", pathGen)
+    .attr("fill", d => FILLS[+d.id % FILLS.length]);
+
+  mg.append("path").datum(borders)
+    .attr("class","borders").attr("d",pathGen);
+
+  OCEAN_LABELS.forEach(([lon,lat,text,rot=0]) => {
+    const p = proj([lon,lat]);
+    if (!p) return;
+    mg.append("text").attr("class","ocean-label")
+      .attr("x",p[0]).attr("y",p[1])
+      .attr("text-anchor","middle")
+      .attr("transform",`rotate(${rot},${p[0]},${p[1]})`)
+      .text(text);
+  });
+
+  C_LABELS.forEach(([lon,lat,name]) => {
+    const p = proj([lon,lat]);
+    if (!p || p[0]<0||p[0]>W||p[1]<0||p[1]>H) return;
+    mg.append("text").attr("class","country-label")
+      .attr("x",p[0]).attr("y",p[1])
+      .attr("text-anchor","middle").text(name);
+  });
+
+  // DRZs — irregular territorial borders in pixel space
+  DRZS.forEach(drz => {
+    const cp = proj(drz.center);
+    if (!cp) return;
+    const [cx, cy] = cp;
+    const pd = drzBorderPath(cx, cy, drz.radiusPx, drz.seed);
+
+    // Outer glow
+    mg.append("path").attr("d", pd)
+      .attr("fill", drz.fill)
+      .attr("stroke", "none")
+      .attr("filter","url(#f-drz-glow)");
+
+    // Fill
+    mg.append("path").attr("d", pd)
+      .attr("fill", drz.fill)
+      .attr("stroke", "none");
+
+    // Solid border — no dash, looks like a real territory outline
+    mg.append("path").attr("d", pd)
+      .attr("fill", "none")
+      .attr("stroke", drz.stroke)
+      .attr("stroke-width","1.4")
+      .attr("stroke-linejoin","round")
+      .attr("opacity","0.9");
+
+    mg.append("text").attr("class","drz-name")
+      .attr("x",cx).attr("y",cy - 5)
+      .attr("text-anchor","middle")
+      .attr("fill", drz.nameCol)
+      .text(drz.name);
+
+    mg.append("text").attr("class","drz-sub")
+      .attr("x",cx).attr("y",cy + 8)
+      .attr("text-anchor","middle")
+      .attr("fill", drz.nameCol)
+      .text(drz.sub);
+  });
+
+  // Route — glow then line
+  const coords = STOPS.map(s => s.coord);
+  const line = {type:"Feature", geometry:{type:"LineString", coordinates:coords}};
+
+  mg.append("path").datum(line)
+    .attr("class","route-glow")
+    .attr("d",pathGen)
+    .attr("filter","url(#f-route-glow)");
+
+  mg.append("path").datum(line)
+    .attr("class","route-line").attr("d",pathGen);
+
+  // Stops
+  const tip = document.getElementById("tip");
+
+  STOPS.forEach(stop => {
+    const p = proj(stop.coord);
+    if (!p) return;
+    const [x,y] = p;
+
+    const sg = mg.append("g").style("cursor","pointer");
+
+    if (stop.type === "terminus") {
+      sg.append("circle").attr("cx",x).attr("cy",y).attr("r",8)
+        .attr("fill","#E030B0").attr("opacity","0.18")
+        .attr("filter","url(#f-stop-glow)");
+      sg.append("circle").attr("cx",x).attr("cy",y).attr("r",5.5)
+        .attr("fill","#0A0814").attr("stroke","#E030B0").attr("stroke-width","1.8");
+      sg.append("circle").attr("cx",x).attr("cy",y).attr("r",2.8).attr("fill","#E030B0");
+      const lx = stop.name === "Woodlands" ? x - 10 : x + 11;
+      const la = stop.name === "Woodlands" ? "end" : "start";
+      sg.append("text").attr("class","stop-label").attr("x",lx).attr("y",y+4)
+        .attr("text-anchor",la).text(stop.name);
+
+    } else if (stop.type === "gauge") {
+      const s = 7;
+      sg.append("polygon")
+        .attr("points",`${x},${y-s} ${x+s},${y} ${x},${y+s} ${x-s},${y}`)
+        .attr("fill","#E030B0").attr("opacity","0.2")
+        .attr("filter","url(#f-stop-glow)");
+      sg.append("polygon")
+        .attr("points",`${x},${y-s} ${x+s},${y} ${x},${y+s} ${x-s},${y}`)
+        .attr("fill","#0A0814").attr("stroke","#E030B0").attr("stroke-width","1.6");
+      sg.append("circle").attr("cx",x).attr("cy",y).attr("r",2.2).attr("fill","#E030B0");
+      sg.append("text").attr("class","stop-label stop-label-sm").attr("x",x+10).attr("y",y-4)
+        .text(stop.name);
+      sg.append("text").attr("class","gauge-tag").attr("x",x+10).attr("y",y+7)
+        .text("Gauge change");
+
+    } else if (stop.type === "minor") {
+      sg.append("circle").attr("cx",x).attr("cy",y).attr("r",3)
+        .attr("fill","#0A0814").attr("stroke","#5A3A90").attr("stroke-width","1");
+      sg.append("circle").attr("cx",x).attr("cy",y).attr("r",1.2).attr("fill","#9070C0");
+      sg.append("text").attr("class","stop-label stop-label-sm").attr("x",x+6).attr("y",y+3)
+        .text(stop.name);
+
+    } else {
+      sg.append("circle").attr("cx",x).attr("cy",y).attr("r",4.5)
+        .attr("fill","#0A0814").attr("stroke","#6A4AA0").attr("stroke-width","1.3");
+      sg.append("circle").attr("cx",x).attr("cy",y).attr("r",1.8).attr("fill","#C0A0E8");
+      sg.append("text").attr("class","stop-label stop-label-sm").attr("x",x+7).attr("y",y+3.5)
+        .text(stop.name);
+    }
+
+    sg.on("mouseenter", () => {
+      tip.innerHTML = `<div class="tip-name">${stop.name}</div>
+        <div class="tip-sec">${stop.section}</div>
+        ${stop.dur ? `<div class="tip-dur">${stop.dur}</div>` : ""}`;
+      tip.classList.add("show");
+    })
+    .on("mousemove", e => {
+      tip.style.left = (e.clientX + 16) + "px";
+      tip.style.top  = (e.clientY + 14) + "px";
+    })
+    .on("mouseleave", () => tip.classList.remove("show"));
+  });
+
+  // Scale bar
+  const p0 = proj([2, 8]);
+  const p1 = proj([12, 8]);
+  if (p0 && p1) {
+    const bw = p1[0] - p0[0];
+    const bx = 50, by = H - 36;
+    const bg = mg.append("g").attr("transform",`translate(${bx},${by})`);
+    bg.append("rect").attr("width",bw).attr("height",3)
+      .attr("fill","#5A3A90").attr("opacity",0.7);
+    bg.append("rect").attr("x",bw/2).attr("width",bw/2).attr("height",3)
+      .attr("fill","#0A0814").attr("stroke","#5A3A90").attr("stroke-width","0.5").attr("opacity",0.9);
+    ["0","~1,000 km","~2,000 km"].forEach((t,i) => {
+      bg.append("text")
+        .attr("x", i * bw/2).attr("y",-5)
+        .attr("text-anchor","middle")
+        .attr("font-family","IBM Plex Sans, sans-serif")
+        .attr("font-size","7").attr("fill","#5A3A90").text(t);
+    });
+  }
+
+}).catch(() => {
+  const eg = svg.append("g").attr("clip-path","url(#map-clip)");
+  eg.append("rect").attr("width",W).attr("height",H).attr("fill","#03020A");
+  eg.append("text").attr("x",W/2).attr("y",H/2)
+    .attr("text-anchor","middle").attr("fill","#E030B0")
+    .attr("font-size","14").attr("font-family","IBM Plex Sans,sans-serif")
+    .text("Map data failed to load — check network connection.");
+});
+</script>
+</body>
+</html>

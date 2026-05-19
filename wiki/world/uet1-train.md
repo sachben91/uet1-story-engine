@@ -34,7 +34,18 @@ The Universal Express Train 1. A transcontinental passenger rail line running 23
 
 ## Route and Stops (selected)
 
-Hong Kong → Guangzhou → Shanghai → [Steppe Corridor / Mongolia] → [Russian border junction] → [Central Asian deserts] → [Strait Country] → Lisbon
+Hong Kong → Guangzhou → Shanghai → Beijing → Dostyk [gauge change] → Almaty → Astana → Moscow → Istanbul → Paris → Madrid → Lisbon → Lagos
+
+**Central Asian section (Siberian Crossing):**
+
+| Leg | Duration | Notes |
+|-----|----------|-------|
+| Moscow → Astana | 16h 30m | Enters former Soviet steppe |
+| Astana → Almaty | 5h 30m | Kazakhstan capital to southern hub |
+| Almaty → Dostyk | 2h | **Gauge change**: Russian broad (1520 mm) → Chinese standard (1435 mm). Dwell 60–90 min for bogie transition + ECOROUTE decontamination sweep. |
+| Dostyk → Beijing | 14h | Chinese standard-gauge high-speed segment, northwest corridor |
+| Beijing → Shanghai | 4h 30m | Eastern seaboard, high-speed |
+| Shanghai → Guangzhou | 7h 30m | Coastal south |
 
 Full timetable in UET-1 Wiki PDF.
 
