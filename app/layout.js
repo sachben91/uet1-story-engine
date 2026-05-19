@@ -60,6 +60,13 @@ export default function RootLayout({ children }) {
                 </div>
               )
             ))}
+
+            <div className="wiki-nav-section">
+              <div className="wiki-nav-heading">Maps</div>
+              <ul>
+                <li><a href="/uet1-route-map.html">UET-1 Route Map</a></li>
+              </ul>
+            </div>
           </nav>
 
           <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
