@@ -198,6 +198,24 @@
   #tip .tip-name { font-weight: 600; font-size: 13px; margin-bottom: 2px; }
   #tip .tip-sec  { color: #5A3A90; font-size: 10px; letter-spacing: 0.06em; }
   #tip .tip-dur  { font-style: italic; font-size: 10.5px; margin-top: 4px; color: #9070C0; }
+
+  #download-btn {
+    background: transparent;
+    border: 1px solid #4020A0;
+    color: #9070C0;
+    padding: 6px 16px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: border-color 0.15s, color 0.15s;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  #download-btn:hover { border-color: #E030B0; color: #E030B0; }
+  #download-btn:disabled { opacity: 0.4; cursor: default; }
 </style>
 </head>
 <body>
@@ -207,6 +225,7 @@
   <div id="atlas-header">
     <h1>Unified Eurasian Transit Line 1 — Route Survey</h1>
     <span class="meta">Lagos · Portugal &nbsp;→&nbsp; Woodlands · Singapore &nbsp;·&nbsp; 23,300 km &nbsp;·&nbsp; 17 Jurisdictions</span>
+    <button id="download-btn">Download</button>
   </div>
 
   <svg id="map-svg" viewBox="0 0 1380 720">
@@ -300,6 +319,7 @@
 
 <div id="tip"></div>
 
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
 <script>
@@ -597,6 +617,34 @@ d3.json("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json").then(w
     .attr("text-anchor","middle").attr("fill","#E030B0")
     .attr("font-size","14").attr("font-family","IBM Plex Sans,sans-serif")
     .text("Map data failed to load — check network connection.");
+});
+
+// ── Download ──────────────────────────────────
+document.getElementById("download-btn").addEventListener("click", function() {
+  const btn = this;
+  btn.textContent = "Rendering…";
+  btn.disabled = true;
+
+  // Hide the tooltip and button itself before capture
+  document.getElementById("tip").style.display = "none";
+  btn.style.visibility = "hidden";
+
+  html2canvas(document.getElementById("atlas-wrap"), {
+    scale: 2,
+    backgroundColor: "#06040C",
+    useCORS: true,
+    logging: false,
+  }).then(canvas => {
+    const link = document.createElement("a");
+    link.download = "uet1-route-map.png";
+    link.href = canvas.toDataURL("image/png");
+    link.click();
+  }).finally(() => {
+    document.getElementById("tip").style.display = "";
+    btn.style.visibility = "visible";
+    btn.textContent = "Download";
+    btn.disabled = false;
+  });
 });
 </script>
 </body>
