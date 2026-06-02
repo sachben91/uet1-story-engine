@@ -67,12 +67,41 @@ Populations outside registered land-use categories are not rendered by the syste
 
 ## Technology
 
-- **Bio-bands** cannot be removed without triggering a flag. Tampering is detectable.
-- **The Pono** is the institutional memory device used by UET-1 security personnel. "Nothing of note" is a legitimate filing.
-- **ECOROUTE retroactive scoring:** being on the train is not a fixed moment. The record continues to be written after the fact. New information can change a past score.
-- **The business car's encrypted comms** are encrypted from external interception, not from ECOROUTE.
-- **Mirage Handler** is a gray-market routing protocol that moves people and information through the formal system's blind spots.
-- Real-time communication off the train is unreliable in the Central Asian crossing and certain DRZ passages.
+### Bio-bands
+
+Wristbands issued to all passengers at boarding. They broadcast compliance status continuously: green, yellow, amber, deep amber, red, black. They cannot be removed without triggering a flag. Tampering is detectable. They are not removed at the DRZ boundaries — they rekey instead, which is a different thing.
+
+A black band does not mean dead. It means the system has decided not to see you. The person still exists. Their legal personhood does not. A black band has never appeared in a canonical story. It exists in unverified accounts.
+
+### ECOROUTE
+
+The biometric surveillance and passenger-tracking system integrated throughout the UET-1 infrastructure. It monitors all 2,347 passengers continuously, reconciles their presence against 17 jurisdictional databases, and maintains behavioral scoring with retroactive capability.
+
+The retroactive part matters. Being on the train is not a fixed event. New information received after the fact can change a past score. Rowan passed through Car 7 and received a "Class 2 metabolic variance" classification she cannot read or contest. Her record continued to be written after she left the array.
+
+The decontamination procedure in Car 7 is a 9-step sequence. Step 7 is the closest biometric read. That is the step the Stolar Key Extraction exploited — a compromised relay in the Car 7 array routing telemetry to Hale's operatives in Zug when the activation signal was broadcast.
+
+### The Pono
+
+The institutional memory device issued to UET-1 security personnel. It runs as multiple simultaneous instances. The Spy ran three: Clerk (archive and record), Hacker (tactical analysis), Agent (active operations monitoring). Each instance can be silenced independently. All three can be silenced at once.
+
+It files reports. It flags incomplete ones. It has an archival browsing mode organized by "order of metaphysical improbability" — the Pono has opinions about what matters.
+
+"Nothing of note" is legitimate Pono report language. It is also how Murkin protected the refugee boy. It is how The Spy protected his son. The phrase does the same bureaucratic work each time; the moral weight is entirely in the person filing it.
+
+### The business car
+
+Encrypted communications, privacy-filmed windows. The encryption is from external interception — not from ECOROUTE. The privacy film blocks visual observation from outside. It does not block the sensor grid. The business car is the closest thing to off-record on the train. It is not off-record.
+
+### Mirage Handler
+
+A Cold War routing protocol that achieved backward compatibility with the Pono network and was never removed — doing so would require 47 vendor libraries and 12 ministerial approvals, which no one has attempted. It stays because removal is harder than ignoring it.
+
+Stepan repurposed it. He replaced the classified files it was designed to carry with soup recipes — shchi, pelmeni, stewed carp — and embedded routing codes in the margins: a triangle of dots, wavy lines, an imperfect circle. The recipes are decoy filler. The symbols route people through gaps in the surveillance grid. The refugee boy at Murkin's siding hut carried a triangle-of-dots card. He knew what it meant. The system that issued it was already 14,326 documents deep in a missing person's archive.
+
+### Communications off the train
+
+Unreliable in the Central Asian crossing and certain DRZ passages. Lin's call from the wadi in Saudi Arabia reached Felix on the train south. The call ended before Felix could respond. Whether this was a signal failure or a choice is not stated.
 
 ---
 
