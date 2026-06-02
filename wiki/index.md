@@ -57,6 +57,7 @@ Last updated: 2026-04-06 (initial build)
 
 | Page | What it covers |
 |------|---------------|
+| [The Toy Box](concepts/toybox.md) | Rules for writing in the trainverse — absolute constraints, world physics, technology, DRZs |
 | [Tensions](concepts/tensions.md) | All 9 UET-1 tensions with canon examples and nesting patterns |
 | [Story Circle and Structure](concepts/story-circle.md) | Story Circle, MICE Quotient, Vonnegut shapes, structural templates |
 | [Tone Rules](concepts/tone-rules.md) | Register, mandatory rules, what not to write, moral framework |
