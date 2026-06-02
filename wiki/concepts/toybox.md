@@ -12,13 +12,11 @@ Style lives in [Tone Rules](tone-rules.md). This is the physical and institution
 
 Stories take place on the UET-1 while it is in motion.
 
-The train is not a setting. It is a condition. Moving is what creates the legal fiction the story inhabits — no jurisdiction fully applies, no one can leave, everyone is in the same sealed room. The moment the train stops, the story changes. Stopping is a jurisdictional event (see Rule 3). If a story begins or ends at a station, the train must be moving for the majority of the narrative.
+Moving is what creates the legal fiction the story inhabits — no jurisdiction fully applies, no one can leave, everyone is in the same sealed room. The moment the train stops, the story changes. Stopping is a jurisdictional event (see Rule 3). If a story begins or ends at a station, the train must be moving for the majority of the narrative.
 
 ### Rule 2 — ECOROUTE is always running
 
 Every passenger wears a bio-band. ECOROUTE is active throughout the train at all times. There is no scene, no car, no moment aboard UET-1 in which a character is not being tracked. The business car has privacy film on the windows — not privacy from the sensors. The decontamination array in Car 7 is the most intensive read point; the rest of the train is lower-resolution but continuous.
-
-ECOROUTE is weather. Bio-bands are clothes. A character's amber band gets mentioned the same way their coat does — as a physical fact. See [Tone Rules](tone-rules.md) §3.
 
 ### Rule 3 — Stopping is a jurisdictional event
 
@@ -42,12 +40,6 @@ Gauge change stops (Dostyk and other border points) are mandatory dwells of 60�
 | Casino Car ("Loss and Gain") | Documented. Has not yet appeared in a story. |
 
 The train is approximately 500 meters long. It takes time to walk from end to end. No one boards or leaves while it moves.
-
-### Time and geography are the same thing
-
-At 225 km/h, position is calculable from elapsed travel time. The route is fixed. Moscow to Astana is 16.5 hours. Almaty to Dostyk is 2 hours and ends in a mandatory stop. A writer always knows where the train is.
-
-The gauge change at Dostyk is the single most loaded moment on the Central Asian crossing. The train stops. Car 7 activates. The decon array reads everyone it can. Local jurisdiction applies. It takes an hour minimum. Any story on the Siberian Crossing should know whether Dostyk has passed or is coming.
 
 ### The full route (west to east)
 
