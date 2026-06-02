@@ -8,6 +8,13 @@ export default function WikiPageContent({ html, headings, title }) {
       <div className="wiki-page-header">
         <h1>{title}</h1>
         <div className="wiki-page-subhead">From the UET-1 Wiki</div>
+        <button
+          className="wiki-print-btn"
+          onClick={() => window.print()}
+          aria-label="Download as PDF"
+        >
+          ↓ Download PDF
+        </button>
       </div>
 
       <article className="wiki-content">
