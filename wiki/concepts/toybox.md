@@ -51,17 +51,19 @@ Lagos → Lisbon → Madrid → Barcelona → Paris → Istanbul → Moscow → 
 
 ## The De-Realized Zones
 
-Two stretches pass through officially recognized De-Realized Zones — territories where standard jurisdictional rendering does not apply. These are in the official UET-1 infrastructure records, not rumor.
+De-Realized Zones are special economic zones whose boundaries are defined by protocol, not by nation states. They do not correspond to any sovereign territory. They are entered and exited when a train — or a passenger, or a record — crosses a protocol threshold, not a border. The UET-1 route passes through two. Both are in the official infrastructure records.
 
 ### Caduceus DRZ
 **Location:** Belgrade–Sofia corridor (Paris → Istanbul leg)  
-**Type:** Pharmaceutical compliance zone  
-Bio-bands rekey on entry and exit. The ECOROUTE record for the passage is overwritten on exit — the train's record shows no gap, but the content is replaced. The Tirzepatide Trail runs through here.
+**Governing protocol:** Pharmaceutical compliance  
+Bio-band identity is reset on entry and exit. The ECOROUTE record for the passage is overwritten on exit — the train's record shows no gap, but the content is gone. The Tirzepatide Trail runs through here.
 
 ### Zoothesia DRZ
 **Location:** ~220 km west of Astana (Moscow → Astana leg)  
-**Type:** Perception-management zone (Zoothesia Protocols)  
-Populations outside registered land-use categories are not rendered by the system. The train passes through; certain things are not recorded. The Lights installation marks the western boundary. The Lights is a genuine aesthetic achievement and a surveillance infrastructure. Both are true.
+**Governing protocol:** Neutral Forge Protocol Authority  
+The Zoothesia Protocols operate a perceptual classifier — a system that decides, per observer, what can safely be rendered. Objects and persons whose readings exceed the classifier's compute threshold are withdrawn from perception rather than resolved. The zone entry marker appears in staff overlays as ZOOTHESIA OPERATIONAL ZONE / NF PROTOCOL AUTHORITY. Passengers are not notified of zone entry.
+
+What the classifier withdraws is not destroyed. It continues to exist physically. It is simply no longer seen. The Mirage Handler network has learned to exploit this: bodies marked with sufficient symbol density — triangle of dots, wavy lines, an imperfect circle — create irresolvable readings that cause the classifier to erase the bearer from the perceptual record. Fu Kenan encountered three such passengers in Car 16. He did not raise the alarm.
 
 ---
 
