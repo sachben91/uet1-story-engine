@@ -27,6 +27,9 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
+      <head>
+        <script src="https://hypothes.is/embed.js" async></script>
+      </head>
       <body>
         <div className="wiki-shell">
           <nav className="wiki-sidebar" aria-label="Wiki navigation">
