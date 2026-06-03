@@ -14,6 +14,7 @@ Last updated: 2026-04-06 (initial build)
 | [Ghost Inside the Light](stories/ghost-inside-the-light.md) | Canonical | The Spy / The Carrier (alternating) | Institutional Duty vs. Mercy |
 | [Signals in the Margins](stories/signals-in-the-margins.md) | Canonical | Detective Pavel Murkin | Institutional Duty vs. Mercy |
 | [The Headless Empire](stories/the-headless-empire.md) | Canonical (PDF unread — v6 draft used) | Felix Lim | System vs. Person |
+| [The Overloaded Train](stories/the-overloaded-train.md) | Canonical · Crossover with Spencer Nitkey's Zoothesia | Fu Kenan | Visibility vs. Erasure |
 
 ---
 
@@ -28,6 +29,7 @@ Last updated: 2026-04-06 (initial build)
 | [Lin Yuan Exact](characters/lin-yuan-exact.md) | CEO, Neutral Forge; builder of the Covenant | The Headless Empire |
 | [Detective Pavel Murkin](characters/detective-pavel-murkin.md) | Border junction detective | Signals in the Margins |
 | [Marcus Hale](characters/marcus-hale.md) | Sable Meridian principal | Referenced: The Chartered Flesh |
+| Fu Kenan | Junior corridor attendant, Car 16 | The Overloaded Train |
 
 ---
 
